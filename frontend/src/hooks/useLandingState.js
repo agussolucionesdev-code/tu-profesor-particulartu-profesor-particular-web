@@ -4,8 +4,14 @@ import { selectorMessages } from '../data/siteData.js';
 import { useReducedMotion } from './useReducedMotion.js';
 
 function activateExclusive(selector, activeElement) {
-  document.querySelectorAll(selector).forEach((element) => element.classList.remove('active'));
+  document.querySelectorAll(selector).forEach((element) => {
+    element.classList.remove('active');
+    if (element instanceof HTMLElement) {
+      element.setAttribute('aria-pressed', 'false');
+    }
+  });
   activeElement.classList.add('active');
+  activeElement.setAttribute('aria-pressed', 'true');
 }
 
 export function useLandingState() {
@@ -29,6 +35,7 @@ export function useLandingState() {
 
       if (!nivel || !materia) {
         resultEl.classList.remove('show');
+        resultEl.hidden = true;
         if (!prefersReducedMotion) {
           gsap.to(resultEl, { height: 0, autoAlpha: 0, duration: 0.25, ease: 'power2.inOut' });
         }
@@ -44,6 +51,7 @@ export function useLandingState() {
       if (message) message.textContent = data.msg;
       if (link) link.href = `https://wa.me/5491164236675?text=${encodeURIComponent(data.wa)}`;
       resultEl.classList.add('show');
+      resultEl.hidden = false;
 
       if (!prefersReducedMotion) {
         gsap.fromTo(resultEl, { height: 0, autoAlpha: 0, y: 10 }, { height: 'auto', autoAlpha: 1, y: 0, duration: 0.45, ease: 'power3.out' });
@@ -56,10 +64,12 @@ export function useLandingState() {
       if (!nextPanel) return;
 
       document.querySelectorAll('.step-nav-btn').forEach((button) => button.classList.remove('active'));
+      document.querySelectorAll('.metodo-step-panel').forEach((panel) => (panel.hidden = true));
       btn?.classList.add('active');
 
       if (current && current !== nextPanel) current.classList.remove('active');
       nextPanel.classList.add('active');
+      nextPanel.hidden = false;
 
       const progress = document.getElementById('step-progress');
       if (progress) {
@@ -78,9 +88,17 @@ export function useLandingState() {
       if (!nextTab) return;
 
       document.querySelectorAll('.sobre-tab-content').forEach((tab) => tab.classList.remove('active'));
-      document.querySelectorAll('.sobre-tab').forEach((tab) => tab.classList.remove('active'));
+      document.querySelectorAll('.sobre-tab-content').forEach((tab) => {
+        tab.hidden = true;
+      });
+      document.querySelectorAll('.sobre-tab').forEach((tab) => {
+        tab.classList.remove('active');
+        tab.setAttribute('aria-selected', 'false');
+      });
       nextTab.classList.add('active');
+      nextTab.hidden = false;
       btn?.classList.add('active');
+      btn?.setAttribute('aria-selected', 'true');
 
       if (!prefersReducedMotion) {
         gsap.fromTo(nextTab, { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0, duration: 0.32, ease: 'power2.out' });
@@ -94,11 +112,17 @@ export function useLandingState() {
     const setMod = (axis, val, btn) => {
       modalityState[axis] = val;
       btn.closest('.mod-toggle')?.querySelectorAll('.mod-toggle-btn').forEach((button) => button.classList.remove('active'));
+      btn.closest('.mod-toggle')?.querySelectorAll('.mod-toggle-btn').forEach((button) => button.setAttribute('aria-pressed', 'false'));
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       const nextPanel = document.getElementById(`panel-${modalityState.modo}-${modalityState.lugar}`);
-      document.querySelectorAll('.mod-panel').forEach((panel) => panel.classList.remove('active'));
+      document.querySelectorAll('.mod-panel').forEach((panel) => {
+        panel.classList.remove('active');
+        panel.hidden = true;
+      });
       nextPanel?.classList.add('active');
+      if (nextPanel) nextPanel.hidden = false;
 
       const modo = document.getElementById('combo-modo');
       const lugar = document.getElementById('combo-lugar');
@@ -118,6 +142,8 @@ export function useLandingState() {
       document.querySelectorAll('.faq-item.open').forEach((faqItem) => {
         faqItem.classList.remove('open');
         const faqAnswer = faqItem.querySelector('.faq-a');
+        const faqTrigger = faqItem.querySelector('.faq-q');
+        faqTrigger?.setAttribute('aria-expanded', 'false');
         if (faqAnswer && !prefersReducedMotion) {
           gsap.to(faqAnswer, { height: 0, autoAlpha: 0, duration: 0.28, ease: 'power2.inOut' });
         }
@@ -125,6 +151,7 @@ export function useLandingState() {
 
       if (!isOpen) {
         item.classList.add('open');
+        item.querySelector('.faq-q')?.setAttribute('aria-expanded', 'true');
         if (!prefersReducedMotion) {
           gsap.fromTo(answer, { height: 0, autoAlpha: 0 }, { height: 'auto', autoAlpha: 1, duration: 0.36, ease: 'power2.out' });
         }
@@ -195,6 +222,11 @@ export function useLandingState() {
     };
 
     document.addEventListener('click', onClick);
+    document.querySelectorAll('.metodo-step-panel').forEach((panel, index) => (panel.hidden = index !== 0));
+    document.querySelectorAll('.mod-panel').forEach((panel, index) => (panel.hidden = index !== 0));
+    document.querySelectorAll('.faq-a').forEach((answer) => {
+      answer.closest('.faq-item')?.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+    });
     updateSelector();
 
     return () => {

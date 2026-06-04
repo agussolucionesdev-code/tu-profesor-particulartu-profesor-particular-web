@@ -11,7 +11,7 @@ const contactItems = [
 
 export default function ContactStrip() {
   return (
-    <div className="contacto-strip">
+    <section aria-label="Datos de contacto" className="contacto-strip">
       <div className="container">
         <RevealGroup className="contacto-items" variant="scale" stagger={0.09}>
           {contactItems.map((item) => {
@@ -31,7 +31,7 @@ export default function ContactStrip() {
           })}
         </RevealGroup>
       </div>
-    </div>
+    </section>
   );
 }
 

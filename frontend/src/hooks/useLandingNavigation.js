@@ -14,6 +14,7 @@ export function useLandingNavigation() {
     const progressBar = document.getElementById('progress-bar');
     const drawerPanel = navDrawer?.querySelector('.nav-drawer-panel');
     const drawerBackdrop = navDrawer?.querySelector('.nav-drawer-backdrop');
+    const drawerClose = navDrawer?.querySelector('.drawer-close');
     let isDrawerOpen = false;
 
     if (drawerPanel && drawerBackdrop && !prefersReducedMotion) {
@@ -41,8 +42,13 @@ export function useLandingNavigation() {
     const setDrawerState = (open) => {
       if (!navDrawer || !hamburgerBtn) return;
       isDrawerOpen = open;
+      if (open) {
+        navDrawer.hidden = false;
+      }
       navDrawer.classList.toggle('open', open);
       hamburgerBtn.classList.toggle('open', open);
+      hamburgerBtn.setAttribute('aria-expanded', String(open));
+      drawerPanel?.setAttribute('aria-modal', String(open));
       setBodyLock(open);
 
       if (drawerPanel && drawerBackdrop && !prefersReducedMotion) {
@@ -54,6 +60,15 @@ export function useLandingNavigation() {
           ease: open ? 'power3.out' : 'power2.inOut',
           onComplete: open ? () => gsap.set(drawerPanel, { clearProps: 'transform' }) : undefined,
         });
+      }
+
+      if (open) {
+        window.setTimeout(() => drawerClose?.focus(), prefersReducedMotion ? 0 : 40);
+      } else {
+        window.setTimeout(() => {
+          if (!isDrawerOpen) navDrawer.hidden = true;
+        }, prefersReducedMotion ? 0 : 320);
+        window.setTimeout(() => hamburgerBtn.focus(), prefersReducedMotion ? 0 : 40);
       }
     };
 

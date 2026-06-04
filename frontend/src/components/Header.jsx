@@ -9,10 +9,10 @@ export default function Header() {
   return (
     <>
       <div id="progress-bar"></div>
-      <nav id="navbar">
+      <nav aria-label="Navegación principal" id="navbar">
         <div className="nav-bar">
           <a className="nav-logo" href="#hero">
-            <img alt="Tu Profesor Particular" src={logos.mainTransparent} />
+            <img alt="Logo de Tu Profesor Particular" decoding="async" fetchPriority="high" height="341" src={logos.mainTransparent} width="512" />
           </a>
 
           <ul className="nav-links">
@@ -32,7 +32,7 @@ export default function Header() {
             </a>
           </div>
 
-          <button aria-label="Menú" className="nav-hamburger" id="hamburgerBtn">
+          <button aria-controls="navDrawer" aria-expanded="false" aria-label="Abrir menú de navegación" className="nav-hamburger" id="hamburgerBtn" type="button">
             <span></span>
             <span></span>
             <span></span>
@@ -40,12 +40,12 @@ export default function Header() {
         </div>
       </nav>
 
-      <div className="nav-drawer" id="navDrawer">
+      <div className="nav-drawer" hidden id="navDrawer">
         <div className="nav-drawer-backdrop"></div>
-        <div className="nav-drawer-panel">
+        <div aria-label="Menú de navegación móvil" className="nav-drawer-panel" role="dialog">
           <div className="drawer-header">
-            <img alt="Tu Profesor Particular" src={logos.mainTransparent} />
-            <button className="drawer-close">×</button>
+            <img alt="" aria-hidden="true" decoding="async" height="341" src={logos.mainTransparent} width="512" />
+            <button aria-label="Cerrar menú de navegación" className="drawer-close" type="button">×</button>
           </div>
 
           <div className="drawer-links">

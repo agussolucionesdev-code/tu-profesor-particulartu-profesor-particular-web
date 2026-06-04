@@ -16,9 +16,9 @@ export default function PhotoGallery() {
             </h2>
           </Reveal>
           <RevealGroup className="mosaic-grid" variant="scale" stagger={0.08}>
-            {gallery.images.map((image) => (
+            {gallery.images.map((image, index) => (
               <div className={image.className} key={image.src}>
-                <img alt={image.alt} className="mosaic-img" src={image.src} />
+                <img alt={image.alt} className="mosaic-img" decoding="async" height={index === 4 ? 1197 : 1296} loading="lazy" src={image.src} width={index === 4 ? 1600 : 970} />
               </div>
             ))}
           </RevealGroup>

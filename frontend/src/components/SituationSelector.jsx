@@ -18,24 +18,24 @@ export default function SituationSelector() {
         </Reveal>
         <Reveal className="selector-box" variant="scale">
           <div className="sel-label">{situationSelector.levelQuestion}</div>
-          <div className="sel-row">
+          <div aria-label={situationSelector.levelQuestion} className="sel-row" role="group">
             {situationSelector.levels.map((level) => (
-              <button className="sel-btn sel-nivel" data-val={level.value} key={level.value}>
+              <button aria-pressed="false" className="sel-btn sel-nivel" data-val={level.value} key={level.value} type="button">
                 {level.label}
               </button>
             ))}
           </div>
           <div id="materia-row">
             <div className="sel-label">{situationSelector.subjectQuestion}</div>
-            <div className="sel-row">
+            <div aria-label={situationSelector.subjectQuestion} className="sel-row" role="group">
               {situationSelector.subjects.map((subject) => (
-                <button className="sel-btn sel-materia" data-val={subject.value} key={subject.value}>
+                <button aria-pressed="false" className="sel-btn sel-materia" data-val={subject.value} key={subject.value} type="button">
                   {subject.label}
                 </button>
               ))}
             </div>
           </div>
-          <div id="selector-result">
+          <div aria-live="polite" id="selector-result">
             <div className="selector-msg-box">
               <p id="selector-msg"></p>
               <a className="btn btn-wa" href="#" id="selector-wa" target="_blank" rel="noreferrer">

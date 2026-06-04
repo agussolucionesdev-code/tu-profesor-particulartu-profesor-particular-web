@@ -35,7 +35,7 @@ export default function LetterSection() {
         <div className="carta-layout">
           <Reveal as="div" className="carta-photo-col" variant="left">
             <div className="carta-photo-frame">
-              <img alt={brand.owner} className="carta-photo-main" src={images.presencial} />
+              <img alt={`${brand.owner} en una imagen que representa el trabajo presencial en clases particulares`} className="carta-photo-main" decoding="async" height="1296" loading="lazy" src={images.presencial} width="970" />
               <div className="carta-photo-quote">
                 <span className="green">&quot;</span>
                 No prometo milagros. Prometo presencia, paciencia y honestidad.
@@ -138,7 +138,7 @@ export default function LetterSection() {
             </RevealGroup>
 
             <Reveal className="carta-firma-v2" delay={0.12}>
-              <img alt="Agustín" className="carta-firma-avatar" src={images.hero} />
+              <img alt="" aria-hidden="true" className="carta-firma-avatar" decoding="async" height="1296" loading="lazy" src={images.hero} width="970" />
               <div className="carta-firma-info">
                 <div className="carta-firma-name">{brand.owner}</div>
                 <div className="carta-firma-role">Tu Profesor Particular · Docente habilitado · Técnico Químico</div>

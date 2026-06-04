@@ -1,0 +1,21 @@
+{
+  "name": "Tu Profesor Particular",
+  "short_name": "Tu Profesor",
+  "description": "Clases particulares de Matemática, Física, Química e Inglés con Agustín Elías Sosa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#1C3558",
+  "icons": [
+    {
+      "src": "/assets/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -39,7 +39,7 @@ export default function Hero() {
             <h1 data-hero-intro>
               ¿Te trabás con
               <br />
-              <span className="hero-rotate-wrap" id="rotateWrap">
+              <span aria-hidden="true" className="hero-rotate-wrap" id="rotateWrap">
                 {rotatingSubjects.map((subject, index) => (
                   <span className={`hero-rotate-word${index === 0 ? ' active' : ''}`} key={subject}>
                     {subject}
@@ -47,6 +47,7 @@ export default function Hero() {
                 ))}
               </span>
               <span className="hero-rotate-mobile">los exámenes?</span>
+              <span className="sr-only">los exámenes</span>
               <br />
               <em>Yo te lo resuelvo.</em>
             </h1>
@@ -80,8 +81,8 @@ export default function Hero() {
           <div className="hero-photo-col" id="heroPhoto">
             <div className="hero-ring hero-ring-1"></div>
             <div className="hero-ring hero-ring-2"></div>
-            <img alt={brand.owner} className="hero-photo-v2" data-hero-photo src={images.hero} />
-            <img alt="Agustín" className="hero-photo2" data-hero-photo-secondary src={images.heroSecondary} />
+            <img alt={`${brand.owner}, profesor particular de Matemática, Física, Química e Inglés`} className="hero-photo-v2" data-hero-photo decoding="async" fetchPriority="high" height="1296" src={images.hero} width="970" />
+            <img alt="" aria-hidden="true" className="hero-photo2" data-hero-photo-secondary decoding="async" height="1296" src={images.heroSecondary} width="970" />
 
             {floatingBadges.map((badge) => (
               <div className={`hero-float-badge ${badge.className}`} data-hero-badge key={badge.className}>

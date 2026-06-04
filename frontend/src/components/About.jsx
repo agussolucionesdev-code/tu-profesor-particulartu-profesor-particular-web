@@ -96,7 +96,13 @@ function SkillsTab() {
 
 function TabContent({ id, children, active = false }) {
   return (
-    <div className={`sobre-tab-content${active ? ' active' : ''}`} id={`tab-${id}`}>
+    <div
+      aria-labelledby={`sobre-tab-${id}`}
+      className={`sobre-tab-content${active ? ' active' : ''}`}
+      hidden={!active}
+      id={`tab-${id}`}
+      role="tabpanel"
+    >
       {children}
     </div>
   );
@@ -110,7 +116,7 @@ export default function About() {
           <div className="sobre-inner-v2">
             <Reveal as="div" className="sobre-photo-col" variant="left">
               <div className="sobre-photo-frame">
-                <img alt={brand.owner} className="sobre-photo-main" src={images.about} />
+                <img alt={`${brand.owner} en una foto de presentación profesional`} className="sobre-photo-main" decoding="async" height="1296" loading="lazy" src={images.about} width="970" />
                 <AboutStats />
               </div>
             </Reveal>
@@ -123,9 +129,17 @@ export default function About() {
               </h2>
               <span className="sobre-tagline">No por falta de opciones — por vocación real.</span>
 
-              <div className="sobre-tabs">
+              <div aria-label="Pestañas sobre Agustín" className="sobre-tabs" role="tablist">
                 {aboutTabs.map((tab, index) => (
-                  <button className={`sobre-tab${index === 0 ? ' active' : ''}`} key={tab.id} type="button">
+                  <button
+                    aria-controls={`tab-${tab.id}`}
+                    aria-selected={index === 0}
+                    className={`sobre-tab${index === 0 ? ' active' : ''}`}
+                    id={`sobre-tab-${tab.id}`}
+                    key={tab.id}
+                    role="tab"
+                    type="button"
+                  >
                     {tab.icon} {tab.label}
                   </button>
                 ))}
@@ -149,7 +163,7 @@ export default function About() {
       </section>
 
       <div className="wave" style={{ background: 'var(--white)' }}>
-        <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
+        <svg aria-hidden="true" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="#1C3558"></path>
         </svg>
       </div>

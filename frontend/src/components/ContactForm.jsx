@@ -158,10 +158,12 @@ export default function ContactForm() {
           <label className="form-field form-field-full">
             <span>Nombre</span>
             <input
+              aria-invalid={Boolean(errors.name)}
               autoComplete="name"
               name="name"
               onChange={handleChange}
               placeholder="Tu nombre"
+              required
               type="text"
               value={values.name}
             />
@@ -171,6 +173,7 @@ export default function ContactForm() {
           <label className="form-field">
             <span>Email</span>
             <input
+              aria-invalid={Boolean(errors.email)}
               autoComplete="email"
               name="email"
               onChange={handleChange}
@@ -184,6 +187,7 @@ export default function ContactForm() {
           <label className="form-field">
             <span>WhatsApp</span>
             <input
+              aria-invalid={Boolean(errors.whatsapp)}
               autoComplete="tel"
               name="whatsapp"
               onChange={handleChange}
@@ -202,7 +206,7 @@ export default function ContactForm() {
 
           <label className="form-field">
             <span>Nivel educativo</span>
-            <select name="level" onChange={handleChange} value={values.level}>
+            <select aria-invalid={Boolean(errors.level)} name="level" onChange={handleChange} required value={values.level}>
               <option value="">Seleccioná un nivel</option>
               {contactFormConfig.levelOptions.map((option) => (
                 <option key={option} value={option}>
@@ -215,7 +219,7 @@ export default function ContactForm() {
 
           <label className="form-field">
             <span>Materia</span>
-            <select name="subject" onChange={handleChange} value={values.subject}>
+            <select aria-invalid={Boolean(errors.subject)} name="subject" onChange={handleChange} required value={values.subject}>
               <option value="">Seleccioná una materia</option>
               {contactFormConfig.subjectOptions.map((option) => (
                 <option key={option} value={option}>
@@ -228,7 +232,7 @@ export default function ContactForm() {
 
           <label className="form-field form-field-full">
             <span>Tipo de consulta</span>
-            <select name="inquiryType" onChange={handleChange} value={values.inquiryType}>
+            <select aria-invalid={Boolean(errors.inquiryType)} name="inquiryType" onChange={handleChange} required value={values.inquiryType}>
               <option value="">Seleccioná el tipo de consulta</option>
               {contactFormConfig.inquiryOptions.map((option) => (
                 <option key={option} value={option}>
@@ -242,9 +246,11 @@ export default function ContactForm() {
           <label className="form-field form-field-full">
             <span>Mensaje</span>
             <textarea
+              aria-invalid={Boolean(errors.message)}
               name="message"
               onChange={handleChange}
               placeholder="Contame qué necesitás, en qué tema estás trabado y si tenés examen cerca."
+              required
               rows="5"
               value={values.message}
             />

@@ -5,11 +5,12 @@ import { modalityAxes, modalityPanels, whatsappMessages, whatsappUrl } from '../
 
 function ModalityAxis({ axis }) {
   return (
-    <div>
+    <div aria-label={axis.label} role="group">
       <div className="mod-axis-label">{axis.label}</div>
       <div className="mod-toggle">
         {axis.options.map((option) => (
           <button
+            aria-pressed={Boolean(option.active)}
             className={`mod-toggle-btn${option.active ? ' active' : ''}`}
             data-axis={axis.axis}
             data-val={option.value}
@@ -26,8 +27,8 @@ function ModalityAxis({ axis }) {
 
 function ModalityPanel({ panel }) {
   return (
-    <div className={`mod-panel${panel.active ? ' active' : ''}`} id={panel.id}>
-      <img alt={panel.imageAlt} className="mod-panel-img" src={panel.image} />
+    <div className={`mod-panel${panel.active ? ' active' : ''}`} hidden={!panel.active} id={panel.id}>
+      <img alt={panel.imageAlt} className="mod-panel-img" decoding="async" height="1296" loading="lazy" src={panel.image} width="970" />
       <div className="mod-panel-content">
         <div className="mod-panel-tag">{panel.tag}</div>
         <h3 className="mod-panel-title">

@@ -9,7 +9,7 @@ const actionIcons = {
 
 export default function FloatingActions() {
   return (
-    <div className="quick-actions" aria-label="Accesos rápidos">
+    <nav aria-label="Accesos rápidos" className="quick-actions">
       {quickActions.map((action) => {
         const Icon = actionIcons[action.key];
         const sharedProps = action.type === 'external' ? { target: '_blank', rel: 'noreferrer' } : {};
@@ -27,14 +27,6 @@ export default function FloatingActions() {
           </a>
         );
       })}
-
-      <div id="tweaks-panel">
-        <h4>✦ Tweaks</h4>
-        <div className="tweak-row"><label>Verde</label><input type="color" defaultValue="#4A9957" /></div>
-        <div className="tweak-row"><label>Navy</label><input type="color" defaultValue="#1C3558" /></div>
-        <div className="tweak-row"><label>Fondo</label><input type="color" defaultValue="#FAFAF8" /></div>
-        <button className="tweak-close">✕ Cerrar</button>
-      </div>
-    </div>
+    </nav>
   );
 }

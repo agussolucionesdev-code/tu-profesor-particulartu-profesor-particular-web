@@ -26,7 +26,7 @@ function TrustSub({ lines }) {
 
 export default function TrustBar() {
   return (
-    <div className="trust">
+    <section aria-label="Credenciales y diferenciales" className="trust">
       <RevealGroup className="trust-grid" variant="scale">
         {trustItems.map((item) => (
           <div className="trust-cell" key={`${item.icon}-${item.greenText}`}>
@@ -36,6 +36,6 @@ export default function TrustBar() {
           </div>
         ))}
       </RevealGroup>
-    </div>
+    </section>
   );
 }

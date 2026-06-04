@@ -15,13 +15,19 @@ export default function FAQ() {
           </h2>
         </Reveal>
         <RevealGroup className="faq-list" stagger={0.08}>
-          {faqs.map((faq) => (
+          {faqs.map((faq, index) => (
             <div className="faq-item" key={faq.question}>
-              <div className="faq-q">
-                {faq.question}
-                <span className="arrow">+</span>
-              </div>
-              <div className="faq-a">
+              <button
+                aria-controls={`faq-panel-${index}`}
+                aria-expanded="false"
+                className="faq-q"
+                id={`faq-trigger-${index}`}
+                type="button"
+              >
+                <span>{faq.question}</span>
+                <span aria-hidden="true" className="arrow">+</span>
+              </button>
+              <div aria-labelledby={`faq-trigger-${index}`} className="faq-a" id={`faq-panel-${index}`} role="region">
                 <div className="faq-a-inner">{faq.answer}</div>
               </div>
             </div>

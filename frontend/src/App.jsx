@@ -24,21 +24,26 @@ export default function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Saltar al contenido principal
+      </a>
       <Header />
-      <Hero />
-      <TrustBar />
-      <LetterSection />
-      <SituationSelector />
-      <Subjects />
-      <Levels />
-      <Method />
-      <About />
-      <PhotoGallery />
-      <Modalities />
-      <Testimonials />
-      <FAQ />
-      <CTASection />
-      <ContactStrip />
+      <main id="main-content">
+        <Hero />
+        <TrustBar />
+        <LetterSection />
+        <SituationSelector />
+        <Subjects />
+        <Levels />
+        <Method />
+        <About />
+        <PhotoGallery />
+        <Modalities />
+        <Testimonials />
+        <FAQ />
+        <CTASection />
+        <ContactStrip />
+      </main>
       <Footer />
       <FloatingActions />
     </>

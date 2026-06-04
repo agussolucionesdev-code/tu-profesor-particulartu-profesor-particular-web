@@ -10,18 +10,18 @@ export const contact = {
 };
 
 export const logos = {
-  mainTransparent: '/assets/logos/TPP_Main_Logo_NoTagline_TransparentBG.png',
-  favicon: '/assets/logos/TPP_Favicon_Monogram_Minimal_WhiteBG.png',
+  mainTransparent: '/assets/logos/tpp-main-logo-512.png',
+  favicon: '/assets/favicons/favicon-32x32.png',
 };
 
 export const images = {
-  hero: '/assets/images/foto-agustin-hero.jpeg',
-  heroSecondary: '/assets/images/foto-agustin-secundaria.jpeg',
-  about: '/assets/images/foto-agustin-sobre-mi.jpeg',
-  presencial: '/assets/images/foto-agustin-presencial.jpeg',
-  virtual: '/assets/images/foto-agustin-virtual.jpeg',
-  group: '/assets/images/foto-agustin-grupal.jpeg',
-  principal: '/assets/images/foto-agustin-principal.jpg',
+  hero: '/assets/images/optimized/foto-agustin-hero-opt.jpg',
+  heroSecondary: '/assets/images/optimized/foto-agustin-secundaria-opt.jpg',
+  about: '/assets/images/optimized/foto-agustin-sobre-mi-opt.jpg',
+  presencial: '/assets/images/optimized/foto-agustin-presencial-opt.jpg',
+  virtual: '/assets/images/optimized/foto-agustin-virtual-opt.jpg',
+  group: '/assets/images/optimized/foto-agustin-grupal-opt.jpg',
+  principal: '/assets/images/optimized/foto-agustin-principal-opt.jpg',
 };
 
 export const brand = {
@@ -83,7 +83,7 @@ export const modalityPanels = [
     id: 'panel-individual-presencial',
     active: true,
     image: images.presencial,
-    imageAlt: 'Presencial',
+    imageAlt: 'Clase particular presencial en Temperley con seguimiento personalizado',
     tag: 'La más personalizada',
     title: 'Cara a cara.',
     emphasis: 'Sin distracciones.',
@@ -100,7 +100,7 @@ export const modalityPanels = [
   {
     id: 'panel-individual-virtual',
     image: images.virtual,
-    imageAlt: 'Virtual',
+    imageAlt: 'Clase virtual individual con acompañamiento personalizado',
     tag: 'Desde cualquier lugar',
     title: 'El mismo profe.',
     emphasis: 'Desde tu casa.',
@@ -112,7 +112,7 @@ export const modalityPanels = [
   {
     id: 'panel-grupal-presencial',
     image: images.group,
-    imageAlt: 'Grupal presencial',
+    imageAlt: 'Clase grupal presencial para estudiar con compañeros',
     tag: 'Mejor precio por persona',
     title: 'Estudiá con',
     emphasis: 'tus compañeros.',
@@ -124,7 +124,7 @@ export const modalityPanels = [
   {
     id: 'panel-grupal-virtual',
     image: images.heroSecondary,
-    imageAlt: 'Grupal virtual',
+    imageAlt: 'Clase grupal virtual para estudiar desde cualquier lugar',
     tag: 'El más accesible',
     title: 'Grupo online.',
     emphasis: 'Sin importar distancias.',
@@ -473,11 +473,11 @@ export const gallery = {
   titleLine1: 'Atrás de la pantalla',
   titleLine2: 'hay una persona real.',
   images: [
-    { className: 'mosaic-cell-1 mosaic-caption', src: images.hero, alt: 'Agustín' },
-    { className: 'mosaic-cell-2', src: images.heroSecondary, alt: 'Agustín' },
-    { className: 'mosaic-cell-3', src: images.presencial, alt: 'Agustín' },
-    { className: 'mosaic-cell-4', src: images.group, alt: 'Agustín' },
-    { className: 'mosaic-cell-5', src: images.principal, alt: 'Agustín' },
+    { className: 'mosaic-cell-1 mosaic-caption', src: images.hero, alt: 'Agustín Elías Sosa en retrato profesional para Tu Profesor Particular' },
+    { className: 'mosaic-cell-2', src: images.heroSecondary, alt: 'Agustín Elías Sosa en una imagen secundaria de presentación' },
+    { className: 'mosaic-cell-3', src: images.presencial, alt: 'Agustín Elías Sosa en contexto de clases presenciales' },
+    { className: 'mosaic-cell-4', src: images.group, alt: 'Agustín Elías Sosa representando clases grupales' },
+    { className: 'mosaic-cell-5', src: images.principal, alt: 'Foto principal de Agustín Elías Sosa para redes y presentación institucional' },
   ],
 };
 

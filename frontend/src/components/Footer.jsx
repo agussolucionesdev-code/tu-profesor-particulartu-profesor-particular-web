@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div className="footer-logo">
-            <img alt={brand.name} src={logos.mainTransparent} />
+            <img alt={`Logo de ${brand.name}`} decoding="async" height="341" loading="lazy" src={logos.mainTransparent} width="512" />
           </div>
           <div className="footer-links">
             {footerLinks.map((link) => (
