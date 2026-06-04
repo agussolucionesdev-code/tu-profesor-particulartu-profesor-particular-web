@@ -1,0 +1,180 @@
+﻿import { ArrowLeft, ArrowRight, MessageCircle } from 'lucide-react';
+import Reveal from './motion/Reveal.jsx';
+import RevealGroup from './motion/RevealGroup.jsx';
+import { methodCompareRows, methodStats, methodSteps, whatsappMessages, whatsappUrl } from '../data/siteData.js';
+
+function CompareTable() {
+  return (
+    <Reveal as="div" className="metodo-compare" variant="right">
+      <div className="compare-header">
+        <div className="compare-col-label bad">Clase típica</div>
+        <div className="compare-col-label good">Mi método</div>
+      </div>
+      {methodCompareRows.map(([bad, good]) => (
+        <div className="compare-row" key={bad}>
+          <div className="compare-bad">{bad}</div>
+          <div className="compare-good">{good}</div>
+        </div>
+      ))}
+    </Reveal>
+  );
+}
+
+function StepNavigator() {
+  return (
+    <RevealGroup className="metodo-steps-nav" stagger={0.08}>
+      {methodSteps.map((step, index) => (
+        <div className="step-nav-item" key={step.number}>
+          <button className={`step-nav-btn${index === 0 ? ' active' : ''}`} type="button">
+            <div className="step-nav-num">{step.number}</div>
+            <div className="step-nav-label">{step.navLabel}</div>
+          </button>
+          {index < methodSteps.length - 1 && <div className="step-nav-line"></div>}
+        </div>
+      ))}
+    </RevealGroup>
+  );
+}
+
+function StepControls({ step }) {
+  if (step.finalCta) {
+    return (
+      <div className="step-nav-controls">
+        <button className="step-btn" type="button">
+          <ArrowLeft aria-hidden="true" size={16} />
+          Anterior
+        </button>
+        <a className="step-btn primary btn" href={whatsappUrl(whatsappMessages.method)} rel="noreferrer" target="_blank">
+          <MessageCircle aria-hidden="true" size={16} />
+          Empezar ahora
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className="step-nav-controls">
+      {step.number > 1 && (
+        <button className="step-btn" type="button">
+          <ArrowLeft aria-hidden="true" size={16} />
+          Anterior
+        </button>
+      )}
+      <button className="step-btn primary" type="button">
+        {step.number === 1 ? 'Siguiente paso' : 'Siguiente'}
+        <ArrowRight aria-hidden="true" size={16} />
+      </button>
+    </div>
+  );
+}
+
+function MethodStepPanel({ step }) {
+  return (
+    <div className={`metodo-step-panel${step.number === 1 ? ' active' : ''}`} id={`step-${step.number}`}>
+      <div className="step-visual">
+        <div className="step-big-num">{step.number}</div>
+        <div className="step-ring"></div>
+        <div className="step-ring2"></div>
+        <div className="step-icon-wrap">
+          <div className="step-icon">{step.icon}</div>
+        </div>
+      </div>
+      <div className="step-content">
+        <div className="step-tag">Paso {step.number} de 4</div>
+        <h3 className="step-title">
+          {step.title}
+          <br />
+          <em>{step.emphasis}</em>
+        </h3>
+        <div className="step-quote">{step.quote}</div>
+        <p className="step-desc">{step.description}</p>
+        <ul className="step-points">
+          {step.points.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
+        <StepControls step={step} />
+      </div>
+    </div>
+  );
+}
+
+function ResultStats() {
+  return (
+    <div className="resultado-stats">
+      {methodStats.map((stat) => (
+        <div className="resultado-stat" key={stat.value}>
+          <div className="resultado-stat-num">
+            {stat.target ? (
+              <span data-suffix={stat.suffix} data-target={stat.target}>
+                {stat.value}
+              </span>
+            ) : (
+              stat.value
+            )}
+          </div>
+          <div className="resultado-stat-label">
+            {stat.labelLines.map((line) => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function Method() {
+  return (
+    <section className="metodo-bg" id="metodo">
+      <div className="container" style={{ position: 'relative', zIndex: '1' }}>
+        <div className="metodo-header">
+          <Reveal as="div" variant="left">
+            <div className="section-label" style={{ color: 'var(--green)' }}>
+              Mi forma de enseñar
+            </div>
+            <div className="metodo-name">Método BioNeuroPsico Didáctico</div>
+            <h2 className="section-title">
+              No hay un solo método.
+              <br />
+              Hay <em style={{ color: 'var(--green)', fontStyle: 'italic' }}>tu</em> método.
+            </h2>
+            <p className="section-desc" style={{ color: 'rgba(255,255,255,.6)', fontSize: '16px' }}>
+              Desarrollé una forma de enseñar que integra neurociencia, psicología del aprendizaje y pedagogía activa.
+              Pero lo central es esto: cada clase la construyo para vos, ese día, ese tema.
+            </p>
+          </Reveal>
+
+          <CompareTable />
+        </div>
+
+        <Reveal className="step-progress" delay={0.05}>
+          <div className="step-progress-fill" id="step-progress" style={{ width: '25%' }}></div>
+        </Reveal>
+
+        <StepNavigator />
+
+        <div className="metodo-step-panels">
+          {methodSteps.map((step) => (
+            <MethodStepPanel key={step.number} step={step} />
+          ))}
+        </div>
+
+        <Reveal className="metodo-resultado" delay={0.08}>
+          <div className="section-label" style={{ color: 'var(--green)', textAlign: 'center' }}>
+            El resultado
+          </div>
+          <h3>7 años de resultados reales.</h3>
+          <p>
+            Este método no salió de un libro — salió de cientos de clases, errores propios y ver qué funciona de
+            verdad. Los números hablan.
+          </p>
+          <ResultStats />
+        </Reveal>
+      </div>
+    </section>
+  );
+}

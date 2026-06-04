@@ -1,0 +1,22 @@
+﻿{
+  "name": "tu-profesor-particular-backend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test ./test/*.test.js"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-rate-limit": "latest",
+    "helmet": "latest",
+    "morgan": "latest",
+    "nodemailer": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {}
+}

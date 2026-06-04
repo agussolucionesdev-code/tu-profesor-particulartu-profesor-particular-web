@@ -1,0 +1,18 @@
+{
+  "used_assets": {
+    "IMG_20221225_181415 (1).jpg": "foto-agustin-principal.jpg",
+    "WhatsApp Image 2026-04-14 at 11.43.16 PM (1).jpeg": "foto-agustin-hero.jpeg",
+    "WhatsApp Image 2026-04-14 at 11.43.16 PM.jpeg": "foto-agustin-virtual.jpeg",
+    "WhatsApp Image 2026-04-14 at 11.44.50 PM.jpeg": "foto-agustin-sobre-mi.jpeg",
+    "WhatsApp Image 2026-04-15 at 12.02.04 AM.jpeg": "foto-agustin-secundaria.jpeg",
+    "WhatsApp Image 2026-04-24 at 5.17.29 PM.jpeg": "foto-agustin-presencial.jpeg",
+    "WhatsApp Image 2026-04-24 at 5.18.18 PM.jpeg": "foto-agustin-grupal.jpeg",
+    "logo-completo-transparente.png": "logo-completo-transparente.png"
+  },
+  "excluded_private": [
+    "DNI*",
+    "CV*",
+    "cv-agustin.pdf"
+  ],
+  "source": "landing/index.html"
+}

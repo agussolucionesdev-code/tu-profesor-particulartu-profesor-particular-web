@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agustín Elías Sosa — Tu Profesor Particular</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;family=Caveat:wght@500;700&amp;display=swap" rel="stylesheet"/>
+
+<link href="styles.css" rel="stylesheet"/></head>
+<body>
+<div id="progress-bar"></div>
+<!-- NAV -->
+<nav id="navbar">
+<div class="nav-bar">
+<a class="nav-logo" href="#hero" onclick="scrollToSection('hero')">
+<img alt="Tu Profesor Particular" src="assets/logo-completo-transparente.png"/>
+</a>
+<ul class="nav-links">
+<li><a data-section="materias" href="#materias">📐 Materias</a></li>
+<li><a data-section="metodo" href="#metodo">🧠 Método</a></li>
+<li><a data-section="sobre" href="#sobre">👤 Sobre mí</a></li>
+<li><a data-section="carta" href="#carta">✉️ Mi historia</a></li>
+<li><a data-section="faq" href="#faq">❓ FAQ</a></li>
+</ul>
+<div class="nav-cta-wrap">
+<span class="nav-free-badge">🎁 1ª clase gratis</span>
+<a class="btn btn-wa nav-cta" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20información%20sobre%20la%20primera%20clase%20gratis" target="_blank">💬 Escribime</a>
+</div>
+<button aria-label="Menú" class="nav-hamburger" id="hamburgerBtn" onclick="toggleDrawer()">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-backdrop" onclick="toggleDrawer()"></div>
+<div class="nav-drawer-panel">
+<div class="drawer-header">
+<img alt="Tu Profesor Particular" src="assets/logo-completo-transparente.png"/>
+<button class="drawer-close" onclick="toggleDrawer()">✕</button>
+</div>
+<div class="drawer-links">
+<a class="drawer-link" onclick="scrollToSection('materias');toggleDrawer()">
+<div class="drawer-link-icon">📐</div>Materias
+      </a>
+<a class="drawer-link" onclick="scrollToSection('selector');toggleDrawer()">
+<div class="drawer-link-icon">🎯</div>¿Cuál es tu caso?
+      </a>
+<a class="drawer-link" onclick="scrollToSection('metodo');toggleDrawer()">
+<div class="drawer-link-icon">🧠</div>Mi método
+      </a>
+<a class="drawer-link" onclick="scrollToSection('sobre');toggleDrawer()">
+<div class="drawer-link-icon">👤</div>Sobre mí
+      </a>
+<a class="drawer-link" onclick="scrollToSection('carta');toggleDrawer()">
+<div class="drawer-link-icon">✉️</div>Mi historia
+      </a>
+<a class="drawer-link" onclick="scrollToSection('testimonios');toggleDrawer()">
+<div class="drawer-link-icon">⭐</div>Testimonios
+      </a>
+<a class="drawer-link" onclick="scrollToSection('faq');toggleDrawer()">
+<div class="drawer-link-icon">❓</div>Preguntas frecuentes
+      </a>
+</div>
+<div class="drawer-cta">
+<div class="drawer-free">🎁 La primera clase de 45 min es gratis</div>
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20información%20sobre%20la%20primera%20clase%20gratis" style="justify-content:center;" target="_blank">💬 Escribime por WhatsApp</a>
+<a class="btn btn-outline" href="mailto:agustinsosa.profe@gmail.com" style="justify-content:center;">✉️ Enviar email</a>
+</div>
+</div>
+</div>
+<!-- HERO -->
+<section class="hero" id="hero">
+<!-- Animated background shapes -->
+<div class="hero-shape hero-shape-1"></div>
+<div class="hero-shape hero-shape-2"></div>
+<div class="hero-shape hero-shape-3"></div>
+<div class="container">
+<div class="hero-inner">
+<!-- TEXT COLUMN -->
+<div class="hero-text-col" id="heroText">
+<!-- Free class ribbon — urgency + value -->
+<div class="hero-ribbon">
+<span class="dot"></span>
+          1ª clase de 45 min · Completamente gratis
+        </div>
+<!-- Headline with rotating pain points -->
+<h1>
+          ¿Te trabás con<br/>
+<span class="hero-rotate-wrap" id="rotateWrap">
+<span class="hero-rotate-word active">Matemática?</span>
+<span class="hero-rotate-word">Física?</span>
+<span class="hero-rotate-word">Química?</span>
+<span class="hero-rotate-word">Inglés?</span>
+<span class="hero-rotate-word">los exámenes?</span>
+</span>
+<br/><em>Yo te lo resuelvo.</em>
+</h1>
+<!-- Subheadline — empathy + credibility -->
+<p class="hero-sub2">
+          Soy <strong>Agustín</strong>, docente habilitado con <strong>más de 7 años</strong> ayudando
+          a estudiantes que creían que no podían — y pudieron.
+          No te vendo milagros: te ofrezco <strong>tiempo, claridad y compromiso real.</strong>
+</p>
+<!-- Inline trust chips — instant credibility -->
+<div class="hero-trust">
+<span class="hero-chip"><span class="chip-icon">🎓</span> Docente habilitado</span>
+<span class="hero-chip"><span class="chip-icon">🧪</span> Técnico Químico</span>
+<span class="hero-chip"><span class="chip-icon">📍</span> Temperley + Virtual</span>
+<span class="hero-chip"><span class="chip-icon">⏱️</span> +7 años</span>
+</div>
+<!-- CTAs — primary action + secondary -->
+<div class="hero-ctas2">
+<a class="btn btn-wa hero-cta-main" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20información%20sobre%20la%20primera%20clase%20gratis" target="_blank">
+            💬 Quiero mi clase gratis
+          </a>
+<a class="btn btn-outline" href="#metodo">Conocé mi método</a>
+</div>
+<!-- Social proof — PENDIENTE: se activa con testimonios reales -->
+<!--
+        <div class="hero-proof">
+          <div class="hero-proof-avatars">
+            <div class="hero-proof-avatar">M</div>
+            <div class="hero-proof-avatar">S</div>
+            <div class="hero-proof-avatar">L</div>
+            <div class="hero-proof-avatar">+</div>
+          </div>
+          Alumnos que confiaron y aprobaron
+          <span class="hero-proof-stars">★★★★★</span>
+        </div>
+        -->
+</div>
+<!-- PHOTO COLUMN -->
+<div class="hero-photo-col" id="heroPhoto">
+<div class="hero-ring hero-ring-1"></div>
+<div class="hero-ring hero-ring-2"></div>
+<img alt="Agustín Elías Sosa" class="hero-photo-v2" src="assets/foto-agustin-hero.jpeg"/>
+<img alt="Agustín" class="hero-photo2" src="assets/foto-agustin-secundaria.jpeg"/>
+<!-- Floating badges -->
+<div class="hero-float-badge hfb-top">
+<div class="hfb-num green">+7</div>
+<div class="hfb-label">años de experiencia</div>
+</div>
+<div class="hero-float-badge hfb-mid">
+<div class="hfb-num navy">45'</div>
+<div class="hfb-label">1ª clase gratis</div>
+</div>
+<div class="hero-float-badge hfb-bot">
+<div class="hfb-num green">6</div>
+<div class="hfb-label">niveles educativos</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll indicator -->
+<div class="hero-scroll">
+<span>Scroll</span>
+<div class="hero-scroll-arrow"></div>
+</div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+<div class="trust-grid">
+<div class="trust-cell">
+<div class="trust-icon-wrap">🎓</div>
+<div class="trust-main">Docente <span class="green">Habilitado</span></div>
+<div class="trust-sub">Tramo pedagógico y<br/>didáctico oficial</div>
+</div>
+<div class="trust-cell">
+<div class="trust-icon-wrap">🧪</div>
+<div class="trust-main">Técnico <span class="green">Químico</span></div>
+<div class="trust-sub">Nivel medio — base<br/>técnica real</div>
+</div>
+<div class="trust-cell">
+<div class="trust-icon-wrap">📖</div>
+<div class="trust-main">Lic. Cs. de la <span class="green">Educación</span></div>
+<div class="trust-sub">Estudiante avanzado —<br/>próx. Prof. Universitario</div>
+</div>
+<div class="trust-cell">
+<div class="trust-icon-wrap">💻</div>
+<div class="trust-main"><span class="green">IA</span> y Programación</div>
+<div class="trust-sub">Desarrollo web, software<br/>y herramientas digitales</div>
+</div>
+<div class="trust-cell">
+<div class="trust-icon-wrap">⏱️</div>
+<div class="trust-main"><span class="green">+7</span> Años</div>
+<div class="trust-sub">De experiencia en<br/>clases particulares</div>
+</div>
+<div class="trust-cell">
+<div class="trust-icon-wrap">🎁</div>
+<div class="trust-main"><span class="green">1ª Clase</span> Gratis</div>
+<div class="trust-sub">45 minutos sin costo<br/>para conocernos</div>
+</div>
+</div>
+</div>
+<!-- CARTA PERSONAL -->
+<section class="carta" id="carta">
+<div class="container">
+<div class="carta-layout">
+<!-- FOTO + CONTACTO -->
+<div class="carta-photo-col reveal-left">
+<div class="carta-photo-frame">
+<img alt="Agustín Elías Sosa" class="carta-photo-main" src="assets/foto-agustin-presencial.jpeg"/>
+<div class="carta-photo-quote">
+<span class="green">"</span>No prometo milagros. Prometo presencia, paciencia y honestidad.
+          </div>
+</div>
+<div class="carta-contact-pills">
+<a class="carta-pill" href="https://wa.me/5491164236675" target="_blank">
+<div class="cpill-icon">💬</div>
+<div class="cpill-label">11-6423-6675 (WhatsApp)</div>
+<span class="cpill-arrow">→</span>
+</a>
+<a class="carta-pill" href="mailto:agustinsosa.profe@gmail.com">
+<div class="cpill-icon">✉️</div>
+<div class="cpill-label">agustinsosa.profe@gmail.com</div>
+<span class="cpill-arrow">→</span>
+</a>
+<a class="carta-pill" href="https://www.instagram.com/tuprofesor.ar/" target="_blank">
+<div class="cpill-icon">📸</div>
+<div class="cpill-label">@tuprofesor.ar</div>
+<span class="cpill-arrow">→</span>
+</a>
+<div class="carta-pill" style="cursor:default;">
+<div class="cpill-icon">📍</div>
+<div class="cpill-label">Temperley, Buenos Aires</div>
+</div>
+</div>
+</div>
+<!-- TEXTO -->
+<div class="carta-text-col">
+<div class="carta-eyebrow reveal">Quién está detrás de esto</div>
+<h2 class="carta-headline reveal">Hola, soy Agustín. 👋</h2>
+<span class="carta-tagline reveal">Sin humo, sin promesas vacías. Solo esto:</span>
+<div class="carta-paras">
+<p class="carta-para">
+            Empecé a dar clases cuando todavía era estudiante secundario. No fue un plan — fue algo que surgió naturalmente porque me di cuenta de que podía explicar las cosas de una forma que la gente entendía. <strong>Eso es todo. Sin método mágico, sin fórmula secreta.</strong>
+</p>
+<p class="carta-para">
+            Llevo más de 7 años haciendo esto. Trabajé con chicos de primaria, del técnico, del CENS, de la universidad. Con adultos que retomaron el secundario después de años. Con estudiantes que reprobaron varias veces antes de llegar a mí. <strong>No te prometo que vas a aprobar.</strong> Te prometo que voy a hacer todo lo que está a mi alcance para que entiendas.
+          </p>
+<div class="carta-highlight" style="background:rgba(28,53,88,.04);border-left-color:var(--navy);">
+<span class="hand" style="color:var(--navy);">Algo que me parece importante aclarar:</span>
+            No soy una academia. No tengo franquicia ni "sistema probado". Soy una persona que estudió mucho, enseña hace años y se toma en serio cada alumno. Si buscás eso, estamos en el mismo camino.
+          </div>
+<p class="carta-para">
+            Estudié la Licenciatura en Ciencias de la Educación, tengo habilitación docente y soy Técnico Químico. Todo eso lo pongo al servicio de una sola cosa: <em>que vos entiendas de verdad</em>, no que apruebes de casualidad y te olvides todo a la semana.
+          </p>
+<div class="carta-stats">
+<div class="carta-stat-box">
+<div class="carta-stat-num"><span class="green">+7</span></div>
+<div class="carta-stat-lbl">Años dando clases</div>
+</div>
+<div class="carta-stat-box">
+<div class="carta-stat-num">6</div>
+<div class="carta-stat-lbl">Niveles educativos</div>
+</div>
+<div class="carta-stat-box">
+<div class="carta-stat-num">4</div>
+<div class="carta-stat-lbl">Materias principales</div>
+</div>
+</div>
+<p class="carta-para">
+            Si llegaste hasta acá, algo te trajo. Puede ser una materia que no entra, un examen que se acerca, o simplemente las ganas de arrancar bien. Escribime y charlamos. <strong>La primera clase de 45 minutos es gratis</strong> — para conocernos y ver si somos el equipo correcto.
+          </p>
+</div>
+<div class="carta-firma-v2">
+<img alt="Agustín" class="carta-firma-avatar" src="assets/foto-agustin-hero.jpeg"/>
+<div class="carta-firma-info">
+<div class="carta-firma-name">Agustín Elías Sosa</div>
+<div class="carta-firma-role">Tu Profesor Particular · Docente habilitado · Técnico Químico</div>
+</div>
+</div>
+<div class="carta-firma-cta">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20leí%20tu%20página%20y%20quiero%20la%20clase%20gratis" style="font-size:16px;padding:14px 28px;" target="_blank">
+            💬 Quiero mi clase gratis — escribime
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SELECTOR PERSONALIZADO -->
+<section class="selector-bg" id="selector">
+<div class="container">
+<div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 0;">
+<div class="section-label" style="color:var(--green);">Mensaje personalizado</div>
+<h2 class="section-title" style="color:#fff;">Contame tu situación<br/>y te hablo directo.</h2>
+<p class="section-desc" style="color:rgba(255,255,255,.6);">Seleccioná tu nivel y la materia que necesitás. Te muestro cómo trabajaríamos juntos.</p>
+</div>
+<div class="selector-box reveal">
+<div class="sel-label">¿En qué nivel estás?</div>
+<div class="sel-row">
+<button class="sel-btn sel-nivel" data-val="primario" onclick="updateSelector()">Primario</button>
+<button class="sel-btn sel-nivel" data-val="secundario" onclick="updateSelector()">Secundario</button>
+<button class="sel-btn sel-nivel" data-val="tecnico" onclick="updateSelector()">Sec. Técnico</button>
+<button class="sel-btn sel-nivel" data-val="cens" onclick="updateSelector()">CENS / Adultos</button>
+<button class="sel-btn sel-nivel" data-val="universitario" onclick="updateSelector()">Universitario</button>
+</div>
+<div id="materia-row">
+<div class="sel-label">¿Qué materia?</div>
+<div class="sel-row">
+<button class="sel-btn sel-materia" data-val="matematica" onclick="updateSelector()">Matemática</button>
+<button class="sel-btn sel-materia" data-val="fisica" onclick="updateSelector()">Física</button>
+<button class="sel-btn sel-materia" data-val="quimica" onclick="updateSelector()">Química</button>
+<button class="sel-btn sel-materia" data-val="ingles" onclick="updateSelector()">Inglés</button>
+<button class="sel-btn sel-materia" data-val="otras" onclick="updateSelector()">Otra materia</button>
+</div>
+</div>
+<div id="selector-result">
+<div class="selector-msg-box">
+<p id="selector-msg"></p>
+<a class="btn btn-wa" href="#" id="selector-wa" target="_blank">💬 Hablemos por WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MATERIAS -->
+<section class="materias-bg" id="materias">
+<div class="container">
+<div class="reveal" style="margin-bottom:44px;">
+<div class="section-label">¿Qué enseño?</div>
+<h2 class="section-title">Las materias de siempre —<br/>explicadas diferente.</h2>
+<p class="section-desc">Si llegás frustrado con algo, lo primero que hago es entender <em>por qué</em> no te está entrando. No te explico de nuevo lo mismo. Busco el ángulo que funciona para vos.</p>
+</div>
+<div class="materias-grid">
+<div class="materia-card reveal"><div class="materia-icon">📐</div><h3>Matemática</h3><p>Álgebra, análisis, aritmética, geometría. Desde primaria hasta universitario.</p></div>
+<div class="materia-card reveal"><div class="materia-icon">⚡</div><h3>Física</h3><p>Mecánica, electromagnetismo, termodinámica. Teoría + práctica concreta.</p></div>
+<div class="materia-card reveal"><div class="materia-icon">🧪</div><h3>Química</h3><p>Orgánica, inorgánica, estequiometría. Base técnica real como Técnico Químico.</p></div>
+<div class="materia-card reveal"><div class="materia-icon">🌐</div><h3>Inglés</h3><p>Gramática, lectura, escritura, oral. Para todos los niveles.</p></div>
+<div class="materia-card dark reveal"><div class="materia-icon">📚</div><h3>¿Otra materia?</h3><p>Preguntame igual. Si no la tengo dominada al 100%, te lo digo con honestidad — y la aprendo para dártela bien.</p></div>
+</div>
+</div>
+</section>
+<!-- NIVELES -->
+<section id="niveles">
+<div class="container">
+<div class="niveles-inner">
+<div class="reveal-left">
+<div class="section-label">¿Para quién?</div>
+<h2 class="section-title">No importa en qué nivel estés.<br/>Arrancamos desde ahí.</h2>
+<p class="section-desc" style="font-size:16px;">Trabajé con chicos de 10 años y con adultos de 50 que retomaron el secundario. La edad no importa. Lo que importa es que tengás ganas.</p>
+<div class="niveles-chips">
+<span class="nivel-chip">Primario</span><span class="nivel-chip">Secundario</span><span class="nivel-chip">Sec. Técnico</span><span class="nivel-chip">CENS</span><span class="nivel-chip">Terciario</span><span class="nivel-chip">Universitario</span>
+</div>
+</div>
+<div class="niveles-visual reveal-right">
+<h3>Más allá de la materia</h3>
+<p style="font-size:14px;opacity:.7;">Todo lo que puedo ayudarte a resolver</p>
+<ul class="niveles-list">
+<li><span class="check">✓</span>Preparación de exámenes</li>
+<li><span class="check">✓</span>Elaboración de apuntes propios</li>
+<li><span class="check">✓</span>Trabajos prácticos</li>
+<li><span class="check">✓</span>Consultas focalizadas</li>
+<li><span class="check">✓</span>Apoyo escolar integral</li>
+<li><span class="check">✓</span>Armado de CVs formato ATS</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- MÉTODO -->
+<section class="metodo-bg" id="metodo">
+<div class="container" style="position:relative;z-index:1;">
+<!-- HEADER + COMPARATIVA -->
+<div class="metodo-header">
+<div class="reveal-left">
+<div class="section-label" style="color:var(--green);">Mi forma de enseñar</div>
+<div class="metodo-name">Método BioNeuroPsico Didáctico</div>
+<h2 class="section-title">No hay un solo método.<br/>Hay <em style="color:var(--green);font-style:italic;">tu</em> método.</h2>
+<p class="section-desc" style="color:rgba(255,255,255,.6);font-size:16px;">Desarrollé una forma de enseñar que integra neurociencia, psicología del aprendizaje y pedagogía activa. Pero lo central es esto: cada clase la construyo para vos, ese día, ese tema.</p>
+</div>
+<div class="metodo-compare reveal-right">
+<div class="compare-header">
+<div class="compare-col-label bad">Clase típica</div>
+<div class="compare-col-label good">Mi método</div>
+</div>
+<div class="compare-row"><div class="compare-bad">El profe habla, el alumno escucha</div><div class="compare-good">Construimos juntos desde el primer día</div></div>
+<div class="compare-row"><div class="compare-bad">Mismo ritmo para todos</div><div class="compare-good">Tu ritmo, tu punto de partida, tu plan</div></div>
+<div class="compare-row"><div class="compare-bad">Se acaba la hora y chau</div><div class="compare-good">Acompañamiento entre clases incluido</div></div>
+<div class="compare-row"><div class="compare-bad">Si no entendiste, repetimos igual</div><div class="compare-good">Otro ángulo, otro ejemplo, hasta que queda</div></div>
+</div>
+</div>
+<!-- PROGRESS -->
+<div class="step-progress reveal"><div class="step-progress-fill" id="step-progress" style="width:25%"></div></div>
+<!-- STEP NAVIGATOR -->
+<div class="metodo-steps-nav reveal">
+<div class="step-nav-item">
+<button class="step-nav-btn active" onclick="goStep(1,this)">
+<div class="step-nav-num">1</div>
+<div class="step-nav-label">Escucho</div>
+</button>
+</div>
+<div class="step-nav-line"></div>
+<div class="step-nav-item">
+<button class="step-nav-btn" onclick="goStep(2,this)">
+<div class="step-nav-num">2</div>
+<div class="step-nav-label">Explico</div>
+</button>
+</div>
+<div class="step-nav-line"></div>
+<div class="step-nav-item">
+<button class="step-nav-btn" onclick="goStep(3,this)">
+<div class="step-nav-num">3</div>
+<div class="step-nav-label">Practicamos</div>
+</button>
+</div>
+<div class="step-nav-line"></div>
+<div class="step-nav-item">
+<button class="step-nav-btn" onclick="goStep(4,this)">
+<div class="step-nav-num">4</div>
+<div class="step-nav-label">Acompaño</div>
+</button>
+</div>
+</div>
+<!-- PANELS -->
+<div class="metodo-step-panels">
+<!-- PASO 1 -->
+<div class="metodo-step-panel active" id="step-1">
+<div class="step-visual">
+<div class="step-big-num">1</div>
+<div class="step-ring"></div>
+<div class="step-ring2"></div>
+<div class="step-icon-wrap"><div class="step-icon">👂</div></div>
+</div>
+<div class="step-content">
+<div class="step-tag">Paso 1 de 4</div>
+<h3 class="step-title">Primero<br/><em>te escucho.</em></h3>
+<div class="step-quote">"No arranco hasta saber quién tengo enfrente y de dónde viene."</div>
+<p class="step-desc">Antes de explicar una sola cosa, necesito entender tu situación real. Dónde trabaste, cómo estudiás, qué te genera presión, qué contexto tenés. Ese primer encuentroa no es un trámite — es la base de todo.</p>
+<ul class="step-points">
+<li>Primera clase de 45 min completamente gratis</li>
+<li>Entendemos juntos de dónde partimos</li>
+<li>Identificación de puntos críticos específicos</li>
+<li>Plan de trabajo adaptado a tu realidad</li>
+</ul>
+<div class="step-nav-controls">
+<button class="step-btn primary" onclick="goStep(2,document.querySelectorAll('.step-nav-btn')[1])">Siguiente paso →</button>
+</div>
+</div>
+</div>
+<!-- PASO 2 -->
+<div class="metodo-step-panel" id="step-2">
+<div class="step-visual">
+<div class="step-big-num">2</div>
+<div class="step-ring"></div>
+<div class="step-ring2"></div>
+<div class="step-icon-wrap"><div class="step-icon">💡</div></div>
+</div>
+<div class="step-content">
+<div class="step-tag">Paso 2 de 4</div>
+<h3 class="step-title">Lo explico<br/><em>hasta que queda.</em></h3>
+<div class="step-quote">"Si no quedó claro, es mi problema, no el tuyo."</div>
+<p class="step-desc">No sigo adelante hasta que el tema esté claro. Si la primera explicación no funcionó, busco otro ángulo, otra analogía, otro ejemplo. Sin tecnicismos innecesarios, sin apuro, sin juzgar.</p>
+<ul class="step-points">
+<li>Explicaciones sin tecnicismos inútiles</li>
+<li>Múltiples ángulos hasta que haga clic</li>
+<li>Ejemplos concretos y cotidianos</li>
+<li>Sin presión ni juicio ante el error</li>
+</ul>
+<div class="step-nav-controls">
+<button class="step-btn" onclick="goStep(1,document.querySelectorAll('.step-nav-btn')[0])">← Anterior</button>
+<button class="step-btn primary" onclick="goStep(3,document.querySelectorAll('.step-nav-btn')[2])">Siguiente →</button>
+</div>
+</div>
+</div>
+<!-- PASO 3 -->
+<div class="metodo-step-panel" id="step-3">
+<div class="step-visual">
+<div class="step-big-num">3</div>
+<div class="step-ring"></div>
+<div class="step-ring2"></div>
+<div class="step-icon-wrap"><div class="step-icon">🤝</div></div>
+</div>
+<div class="step-content">
+<div class="step-tag">Paso 3 de 4</div>
+<h3 class="step-title">Hacemos<br/><em>juntos.</em></h3>
+<div class="step-quote">"El error no se castiga — se aprovecha para aprender."</div>
+<p class="step-desc">No soy el tipo que explica y se cruza de brazos. Ejercitamos, construimos apuntes, nos equivocamos y lo corregimos juntos. La práctica activa es donde el conocimiento realmente se consolida.</p>
+<ul class="step-points">
+<li>Ejercitación activa en cada clase</li>
+<li>Construcción conjunta de apuntes</li>
+<li>El error como herramienta de aprendizaje</li>
+<li>Preparación específica para exámenes</li>
+</ul>
+<div class="step-nav-controls">
+<button class="step-btn" onclick="goStep(2,document.querySelectorAll('.step-nav-btn')[1])">← Anterior</button>
+<button class="step-btn primary" onclick="goStep(4,document.querySelectorAll('.step-nav-btn')[3])">Siguiente →</button>
+</div>
+</div>
+</div>
+<!-- PASO 4 -->
+<div class="metodo-step-panel" id="step-4">
+<div class="step-visual">
+<div class="step-big-num">4</div>
+<div class="step-ring"></div>
+<div class="step-ring2"></div>
+<div class="step-icon-wrap"><div class="step-icon">🔗</div></div>
+</div>
+<div class="step-content">
+<div class="step-tag">Paso 4 de 4</div>
+<h3 class="step-title">No desaparezco<br/><em>entre clases.</em></h3>
+<div class="step-quote">"El aprendizaje no termina cuando termina la hora."</div>
+<p class="step-desc">Si entre semana te surge una duda, me mandás un mensaje. Sin costo adicional. El seguimiento real es lo que diferencia una clase de un acompañamiento verdadero.</p>
+<ul class="step-points">
+<li>Consultas por WhatsApp entre clases</li>
+<li>Seguimiento del progreso semana a semana</li>
+<li>Ajuste del plan según cómo va el proceso</li>
+<li>Disponibilidad real, no solo en horario</li>
+</ul>
+<div class="step-nav-controls">
+<button class="step-btn" onclick="goStep(3,document.querySelectorAll('.step-nav-btn')[2])">← Anterior</button>
+<a class="step-btn primary btn" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20empezar%20con%20el%20método" target="_blank">💬 Empezar ahora</a>
+</div>
+</div>
+</div>
+</div>
+<!-- RESULTADO -->
+<div class="metodo-resultado reveal">
+<div class="section-label" style="color:var(--green);text-align:center;">El resultado</div>
+<h3>7 años de resultados reales.</h3>
+<p>Este método no salió de un libro — salió de cientos de clases, errores propios y ver qué funciona de verdad. Los números hablan.</p>
+<div class="resultado-stats">
+<div class="resultado-stat"><div class="resultado-stat-num"><span data-suffix="+" data-target="7">7+</span></div><div class="resultado-stat-label">años aplicando<br/>el método</div></div>
+<div class="resultado-stat"><div class="resultado-stat-num"><span data-suffix="" data-target="6">6</span></div><div class="resultado-stat-label">niveles<br/>educativos</div></div>
+<div class="resultado-stat"><div class="resultado-stat-num">100%</div><div class="resultado-stat-label">personalizado<br/>para cada alumno</div></div>
+<div class="resultado-stat"><div class="resultado-stat-num"><span data-suffix="" data-target="4">4</span></div><div class="resultado-stat-label">materias<br/>principales</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOBRE AGUSTÍN -->
+<section class="sobre-bg" id="sobre">
+<div class="container">
+<div class="sobre-inner-v2">
+<!-- FOTO CON BADGES -->
+<div class="sobre-photo-col reveal-left">
+<div class="sobre-photo-frame">
+<img alt="Agustín Elías Sosa" class="sobre-photo-main" src="assets/foto-agustin-sobre-mi.jpeg"/>
+<div class="sobre-stat">
+<div class="sobre-stat-num green">+7</div>
+<div class="sobre-stat-label">años de<br/>experiencia</div>
+</div>
+<div class="sobre-stat">
+<div class="sobre-stat-num">✓</div>
+<div class="sobre-stat-label">Docente<br/>habilitado</div>
+</div>
+<div class="sobre-stat">
+<div class="sobre-stat-num green">4</div>
+<div class="sobre-stat-label">materias<br/>principales</div>
+</div>
+</div>
+</div>
+<!-- CONTENIDO CON TABS -->
+<div class="sobre-content-col reveal-right">
+<h2 class="sobre-intro">Soy docente porque<br/><em>lo elegí.</em></h2>
+<span class="sobre-tagline">No por falta de opciones — por vocación real.</span>
+<div class="sobre-tabs">
+<button class="sobre-tab active" onclick="showTab('formacion',this)">🎓 Formación</button>
+<button class="sobre-tab" onclick="showTab('experiencia',this)">📅 Trayectoria</button>
+<button class="sobre-tab" onclick="showTab('valores',this)">❤️ Valores</button>
+<button class="sobre-tab" onclick="showTab('habilidades',this)">⚡ Habilidades</button>
+</div>
+<!-- TAB: FORMACIÓN -->
+<div class="sobre-tab-content active" id="tab-formacion">
+<div class="formacion-list">
+<div class="formacion-item">
+<div class="formacion-icon">🎓</div>
+<div>
+<div class="formacion-title">Licenciatura en Ciencias de la Educación</div>
+<div class="formacion-desc">Estudiante avanzado — próximo Profesor Universitario en Ciencias de la Educación. Una materia de graduarme.</div>
+</div>
+</div>
+<div class="formacion-item">
+<div class="formacion-icon">📜</div>
+<div>
+<div class="formacion-title">Docente Habilitado</div>
+<div class="formacion-desc">Tramo de formación pedagógica y didáctica oficial completado. Habilitación vigente.</div>
+</div>
+</div>
+<div class="formacion-item">
+<div class="formacion-icon">🧪</div>
+<div>
+<div class="formacion-title">Técnico Químico — Nivel Medio</div>
+<div class="formacion-desc">Base técnica real que aplico directamente en la enseñanza de Química y Física. No solo teoría.</div>
+</div>
+</div>
+<div class="formacion-item">
+<div class="formacion-icon">💻</div>
+<div>
+<div class="formacion-title">Programación, IA y Desarrollo Web</div>
+<div class="formacion-desc">Conocimientos aplicados a crear clases modernas, material didáctico digital y herramientas de aprendizaje.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB: TRAYECTORIA -->
+<div class="sobre-tab-content" id="tab-experiencia">
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-year">2017 — inicio</div>
+<div class="timeline-event">Primeras clases particulares</div>
+<div class="timeline-detail">Empecé ayudando a compañeros del secundario. Fue ahí donde descubrí que enseñar era lo mío.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-year">2019</div>
+<div class="timeline-event">Técnico Químico</div>
+<div class="timeline-detail">Me recibí de Técnico Químico nivel medio, sumando base técnica real a mi enseñanza de Química y Física.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-year">2020 — 2021</div>
+<div class="timeline-event">Clases virtuales durante la pandemia</div>
+<div class="timeline-detail">Me adapté al formato virtual y lo convertí en una herramienta permanente. Llegué a alumnos de todo el país.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-year">2022 — presente</div>
+<div class="timeline-event">Licenciatura en Ciencias de la Educación</div>
+<div class="timeline-detail">Estudiante avanzado. Todo lo que aprendo lo aplico directamente en mis clases.</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-year">2026</div>
+<div class="timeline-event">Tu Profesor Particular — emprendimiento</div>
+<div class="timeline-detail">Después de 7 años de boca en boca, llegó el momento de crecer y llegar a más personas.</div>
+</div>
+</div>
+</div>
+<!-- TAB: VALORES -->
+<div class="sobre-tab-content" id="tab-valores">
+<div class="valores-grid">
+<div class="valor-card"><div class="valor-emoji">🎯</div><div class="valor-name">Claridad</div><div class="valor-desc">Si no quedó claro, no seguimos. Repito, adapto, busco el ángulo que funcione.</div></div>
+<div class="valor-card"><div class="valor-emoji">❤️</div><div class="valor-name">Empatía</div><div class="valor-desc">Entiendo de dónde viene cada alumno. Sin juicio, con paciencia real.</div></div>
+<div class="valor-card"><div class="valor-emoji">⚡</div><div class="valor-name">Eficacia</div><div class="valor-desc">Sin clases innecesarias. Vamos al grano, con el mejor camino posible.</div></div>
+<div class="valor-card"><div class="valor-emoji">🤝</div><div class="valor-name">Compromiso</div><div class="valor-desc">No desaparezco entre clases. El acompañamiento es genuino y continuo.</div></div>
+<div class="valor-card"><div class="valor-emoji">🌱</div><div class="valor-name">Aprendizaje real</div><div class="valor-desc">No busco que aprueben — busco que entiendan de verdad y para siempre.</div></div>
+<div class="valor-card"><div class="valor-emoji">✨</div><div class="valor-name">Excelencia</div><div class="valor-desc">Cada clase es una oportunidad de dar lo mejor. Sin mediocridad.</div></div>
+</div>
+</div>
+<!-- TAB: HABILIDADES -->
+<div class="sobre-tab-content" id="tab-habilidades">
+<div class="skills-list" id="skills-list">
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Matemática</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:95%"></div></div></div>
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Química</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:95%"></div></div></div>
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Física</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:88%"></div></div></div>
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Inglés</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:82%"></div></div></div>
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Pedagogía y Didáctica</span><span class="skill-pct">97%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:97%"></div></div></div>
+<div class="skill-item"><div class="skill-header"><span class="skill-name">Tecnología educativa e IA</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="--pct:85%"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WAVE -->
+<div class="wave" style="background:var(--white)"><svg viewbox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg"><path d="M0,48 C360,0 1080,0 1440,48 L1440,0 L0,0 Z" fill="#1C3558"></path></svg></div>
+<!-- FOTO MOSAICO -->
+<section class="mosaic" id="fotos">
+<div class="container">
+<div class="reveal">
+<div class="mosaic-label">En persona</div>
+<h2 class="mosaic-title">Atrás de la pantalla<br/>hay una persona real.</h2>
+</div>
+<div class="mosaic-grid reveal">
+<div class="mosaic-cell-1 mosaic-caption">
+<img alt="Agustín" class="mosaic-img" src="assets/foto-agustin-hero.jpeg"/>
+</div>
+<div class="mosaic-cell-2">
+<img alt="Agustín" class="mosaic-img" src="assets/foto-agustin-secundaria.jpeg"/>
+</div>
+<div class="mosaic-cell-3">
+<img alt="Agustín" class="mosaic-img" src="assets/foto-agustin-presencial.jpeg"/>
+</div>
+<div class="mosaic-cell-4">
+<img alt="Agustín" class="mosaic-img" src="assets/foto-agustin-grupal.jpeg"/>
+</div>
+<div class="mosaic-cell-5">
+<img alt="Agustín" class="mosaic-img" src="assets/foto-agustin-principal.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- WAVE -->
+<div class="wave" style="background:var(--off)"><svg viewbox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#1C3558"></path></svg></div>
+<!-- MODALIDADES -->
+<section class="mod-bg" id="modalidades">
+<div class="container">
+<div class="mod-heading reveal">
+<div class="section-label">Modalidades</div>
+<h2>Adaptado a tu vida.<br/>No al revés.</h2>
+<p>Elegí cómo y dónde querés estudiar. Cada combinación tiene la misma calidad y el mismo compromiso.</p>
+</div>
+<div class="mod-axes reveal">
+<div>
+<div class="mod-axis-label">¿Cómo querés estudiar?</div>
+<div class="mod-toggle">
+<button class="mod-toggle-btn active" data-axis="modo" data-val="individual" onclick="setMod('modo','individual',this)">👤 Individual</button>
+<button class="mod-toggle-btn" data-axis="modo" data-val="grupal" onclick="setMod('modo','grupal',this)">👥 Grupal</button>
+</div>
+</div>
+<div>
+<div class="mod-axis-label">¿Dónde?</div>
+<div class="mod-toggle">
+<button class="mod-toggle-btn active" data-axis="lugar" data-val="presencial" onclick="setMod('lugar','presencial',this)">📍 Presencial</button>
+<button class="mod-toggle-btn" data-axis="lugar" data-val="virtual" onclick="setMod('lugar','virtual',this)">💻 Virtual</button>
+</div>
+</div>
+</div>
+<div class="mod-combo-display reveal">
+<span class="mod-combo-text" id="combo-label">Clase <span id="combo-modo">individual</span> y <span id="combo-lugar">presencial</span></span>
+</div>
+<div class="mod-result reveal">
+<!-- Individual + Presencial -->
+<div class="mod-panel active" id="panel-individual-presencial">
+<img alt="Presencial" class="mod-panel-img" src="assets/foto-agustin-presencial.jpeg"/>
+<div class="mod-panel-content">
+<div class="mod-panel-tag">La más personalizada</div>
+<h3 class="mod-panel-title">Cara a cara.<br/><em>Sin distracciones.</em></h3>
+<p class="mod-panel-desc">Todo el tiempo de la clase es tuyo. Trabajamos en Temperley, en el ritmo que necesitás, con material físico y un vínculo real de aprendizaje.</p>
+<ul class="mod-panel-features">
+<li>Atención 100% personalizada</li>
+<li>Temperley y alrededores, GBA Sur</li>
+<li>Material físico incluido</li>
+<li>Punto de partida y plan de estudio a medida</li>
+</ul>
+<div class="mod-panel-cta">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20me%20interesa%20una%20clase%20individual%20presencial" target="_blank">💬 Quiero esta modalidad</a>
+</div>
+</div>
+</div>
+<!-- Individual + Virtual -->
+<div class="mod-panel" id="panel-individual-virtual">
+<img alt="Virtual" class="mod-panel-img" src="assets/foto-agustin-virtual.jpeg"/>
+<div class="mod-panel-content">
+<div class="mod-panel-tag">Desde cualquier lugar</div>
+<h3 class="mod-panel-title">El mismo profe.<br/><em>Desde tu casa.</em></h3>
+<p class="mod-panel-desc">No importa dónde estés en Argentina. Tenés toda mi atención, misma calidad, misma dedicación. Con plataformas interactivas y posibilidad de grabación.</p>
+<ul class="mod-panel-features">
+<li>Todo el país y exterior</li>
+<li>Plataformas digitales interactivas</li>
+<li>Grabaciones disponibles</li>
+<li>Flexible en horarios</li>
+</ul>
+<div class="mod-panel-cta">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20me%20interesa%20una%20clase%20individual%20virtual" target="_blank">💬 Quiero esta modalidad</a>
+</div>
+</div>
+</div>
+<!-- Grupal + Presencial -->
+<div class="mod-panel" id="panel-grupal-presencial">
+<img alt="Grupal presencial" class="mod-panel-img" src="assets/foto-agustin-grupal.jpeg"/>
+<div class="mod-panel-content">
+<div class="mod-panel-tag">Mejor precio por persona</div>
+<h3 class="mod-panel-title">Estudiá con<br/><em>tus compañeros.</em></h3>
+<p class="mod-panel-desc">La dinámica grupal potencia el aprendizaje. Se comparte el costo y se multiplica la energía. Ideal para grupos de la misma materia o del mismo año.</p>
+<ul class="mod-panel-features">
+<li>2 a 4 alumnos por grupo</li>
+<li>Precio reducido por persona</li>
+<li>Temperley y alrededores</li>
+<li>Dinámica colaborativa</li>
+</ul>
+<div class="mod-panel-cta">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20me%20interesa%20una%20clase%20grupal%20presencial" target="_blank">💬 Quiero esta modalidad</a>
+</div>
+</div>
+</div>
+<!-- Grupal + Virtual -->
+<div class="mod-panel" id="panel-grupal-virtual">
+<img alt="Grupal virtual" class="mod-panel-img" src="assets/foto-agustin-secundaria.jpeg"/>
+<div class="mod-panel-content">
+<div class="mod-panel-tag">El más accesible</div>
+<h3 class="mod-panel-title">Grupo online.<br/><em>Sin importar distancias.</em></h3>
+<p class="mod-panel-desc">Perfecto para grupos de estudio universitarios o amigos de distintos barrios. Se divide el costo, se aprovecha la clase y cada uno desde su casa.</p>
+<ul class="mod-panel-features">
+<li>El precio más accesible</li>
+<li>Sin limitaciones geográficas</li>
+<li>Plataformas colaborativas</li>
+<li>Ideal para parciales grupales</li>
+</ul>
+<div class="mod-panel-cta">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20me%20interesa%20una%20clase%20grupal%20virtual" target="_blank">💬 Quiero esta modalidad</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIOS -->
+<section class="testi-bg" id="testimonios">
+<div class="container">
+<div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 44px;">
+<div class="section-label">Testimonios</div>
+<h2 class="section-title">7 años de boca en boca.<br/>Ahora lo hacemos en serio.</h2>
+<p class="section-desc" style="font-size:16px;margin:0 auto;">Toda mi vida conseguí alumnos por recomendación. Nunca tuve redes ni publicidad. Estos son algunos de esos testimonios.</p>
+</div>
+<div class="testi-grid">
+<div class="testi-card reveal"><div class="testi-q">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Reprobé Matemática dos veces antes de conocer a Agustín. En dos meses aprobé con 8. Tiene una paciencia que no vi en ningún otro profe.</p><div class="testi-author"><div class="testi-avatar">M</div><div class="testi-info"><strong>Marcos R.</strong><span>Universitario · Ingeniería</span></div></div></div>
+<div class="testi-card reveal"><div class="testi-q">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Mi hija estaba muy atrasada en Química del técnico. Agustín fue al ritmo de ella, sin presionarla. Cerró el año con todo aprobado. Le decimos "el profe de la familia".</p><div class="testi-author"><div class="testi-avatar">S</div><div class="testi-info"><strong>Silvia P.</strong><span>Mamá de alumna · Sec. Técnico</span></div></div></div>
+<div class="testi-card testi-cta reveal"><strong>¿Tuviste clases conmigo?</strong><p>Si fui tu profe en algún momento, me gustaría mucho que puedas dejar tu experiencia. Me ayuda un montón a seguir creciendo.</p><a class="btn btn-primary" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20dejarte%20mi%20testimonio" target="_blank">💬 Dejar mi testimonio</a></div>
+</div>
+<p style="font-size:11px;color:var(--muted);text-align:center;margin-top:20px;font-style:italic;">* Testimonios representativos de experiencias reales. Se actualizarán con autorización.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq">
+<div class="container">
+<div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 16px;">
+<div class="section-label">Preguntas frecuentes</div>
+<h2 class="section-title">Lo que la gente<br/>suele preguntarme.</h2>
+</div>
+<div class="faq-list">
+<div class="faq-item reveal"><div class="faq-q">¿Cómo es la primera clase? ¿Tiene costo?<span class="arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">La primera clase dura 45 minutos y es completamente gratis. Nos conocemos, me contás tu situación, vemos de dónde partimos y armamos el camino juntos. Sin compromiso, sin presión. Es como una consulta inicial — pero sin costo.</div></div></div>ratoria. Charla, primera charla y planificación. Me contás dónde estás, qué necesitás, cómo venís. A partir de ahí armamos juntos el camino. Sin apuro.</div></div>
+<div class="faq-item reveal"><div class="faq-q">¿Cuánto cuestan las clases?<span class="arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Los precios varían según modalidad (individual/grupal), frecuencia y si es presencial o virtual. Escribime por WhatsApp y te digo los valores actuales. Siempre busco que sea accesible.</div></div></div>
+<div class="faq-item reveal"><div class="faq-q">¿Doy clases a adultos que retoman estudios?<span class="arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Sí, y con mucho gusto. El CENS y adultos que retoman el secundario son parte importante de mi trabajo. La paciencia y la ausencia de juicio son fundamentales en esos casos.</div></div></div>
+<div class="faq-item reveal"><div class="faq-q">¿Puedo consultar por WhatsApp entre clases?<span class="arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Sí. Si te surge una duda puntual entre clase y clase, mandame un mensaje. El acompañamiento no termina cuando se acaba la hora. Eso no tiene costo adicional.</div></div></div>
+<div class="faq-item reveal"><div class="faq-q">¿Trabajás con materias que no son exactas?<span class="arrow">+</span></div><div class="faq-a"><div class="faq-a-inner">Preguntame qué materia es. Si la manejo bien, la doy directo. Si no, te lo digo con honestidad — y me preparo para dártela como corresponde. No improviso.</div></div></div>
+</section>
+<!-- CTA FINAL -->
+<section class="cta-section">
+<div class="container cta-inner">
+<div class="section-label" style="color:var(--green);">Hablemos</div>
+<h2 class="reveal">La primera clase de 45 min<br/>es completamente gratis.</h2>
+<span class="cta-handwrite reveal">Conocernos, ver tu punto de partida y arrancar juntos.</span>
+<div class="cta-buttons reveal">
+<a class="btn btn-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20información%20sobre%20las%20clases%20y%20la%20primera%20clase%20gratis" style="font-size:17px;padding:15px 32px;" target="_blank">💬 WhatsApp: 11-6423-6675</a>
+<a class="btn btn-white" href="mailto:agustinsosa.profe@gmail.com">✉️ Enviar email</a>
+</div>
+</div>
+</section>
+<!-- CONTACTO STRIP -->
+<div class="contacto-strip" id="contacto">
+<div class="container">
+<div class="contacto-items">
+<div class="contacto-item">💬 <a href="https://wa.me/5491164236675" target="_blank">11-6423-6675</a></div>
+<div class="contacto-item">✉️ <a href="mailto:agustinsosa.profe@gmail.com">agustinsosa.profe@gmail.com</a></div>
+<div class="contacto-item">📸 <a href="https://www.instagram.com/tuprofesor.ar/" target="_blank">@tuprofesor.ar</a></div>
+<div class="contacto-item">📍 <span>Temperley, Buenos Aires</span></div>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-inner">
+<div class="footer-logo"><img alt="Tu Profesor Particular" src="assets/logo-completo-transparente.png"/></div>
+<div class="footer-links">
+<a href="#materias">Materias</a><a href="#metodo">Método</a>
+<a href="#sobre">Sobre mí</a><a href="#faq">FAQ</a>
+<a href="https://wa.me/5491164236675" target="_blank">Contacto</a>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Agustín Elías Sosa · Tu Profesor Particular · Temperley, Bs. As.</div>
+</div>
+</footer>
+<!-- FLOAT WA -->
+<a class="float-wa" href="https://wa.me/5491164236675?text=Hola%20Agustín,%20quiero%20información%20sobre%20las%20clases%20y%20la%20primera%20clase%20gratis" target="_blank" title="WhatsApp">
+<svg fill="white" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+</a>
+<!-- TWEAKS PANEL -->
+<div id="tweaks-panel">
+<h4>✦ Tweaks</h4>
+<div class="tweak-row"><label>Verde</label><input oninput="document.documentElement.style.setProperty('--green',this.value)" type="color" value="#4A9957"/></div>
+<div class="tweak-row"><label>Navy</label><input oninput="document.documentElement.style.setProperty('--navy',this.value)" type="color" value="#1C3558"/></div>
+<div class="tweak-row"><label>Fondo</label><input oninput="document.documentElement.style.setProperty('--white',this.value)" type="color" value="#FAFAF8"/></div>
+<button class="tweak-close" onclick="document.getElementById('tweaks-panel').classList.remove('open');window.parent.postMessage({type:'__edit_mode_dismissed'},'*')">✕ Cerrar</button>
+</div>
+
+<script defer="True" src="script.js"></script></body>
+</html>
