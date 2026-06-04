@@ -16,6 +16,10 @@ export const env = {
   nodeEnv: process.env.NODE_ENV ?? 'development',
   port: parsePort(process.env.PORT),
   corsOrigin: parseOrigins(process.env.CORS_ORIGIN),
+  resend: {
+    apiKey: process.env.RESEND_API_KEY?.trim() || '',
+    from: process.env.RESEND_FROM?.trim() || 'Tu Profesor Particular <onboarding@resend.dev>',
+  },
   smtp: {
     host: process.env.SMTP_HOST?.trim() || '',
     port: parsePort(process.env.SMTP_PORT, 587),

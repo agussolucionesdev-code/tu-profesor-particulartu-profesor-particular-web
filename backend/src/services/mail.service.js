@@ -1,6 +1,10 @@
 ﻿import nodemailer from 'nodemailer';
 import { env } from '../config/env.js';
 
+function hasResendConfig() {
+  return Boolean(env.resend.apiKey);
+}
+
 function hasSmtpConfig() {
   return Boolean(env.smtp.host && env.smtp.user && env.smtp.pass);
 }
@@ -21,14 +25,31 @@ function formatContactText(contact) {
   ].join('\n');
 }
 
-export async function notifyContact(contact) {
-  const text = formatContactText(contact);
+async function sendWithResend(contact, text) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.resend.apiKey}`,
+      'Content-Type': 'application/json',
+      'User-Agent': 'tu-profesor-particular-backend/0.1.0',
+    },
+    body: JSON.stringify({
+      from: env.resend.from,
+      to: [env.mailTo],
+      subject: `Nuevo contacto de ${contact.name} — ${contact.subject}`,
+      text,
+    }),
+  });
 
-  if (!hasSmtpConfig()) {
-    console.info('[mail:dry-run] contact', text);
-    return { sent: false, dryRun: true };
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Resend request failed (${response.status}): ${errorText}`);
   }
 
+  return { sent: true, dryRun: false, provider: 'resend' };
+}
+
+async function sendWithSmtp(contact, text) {
   const transporter = nodemailer.createTransport({
     host: env.smtp.host,
     port: env.smtp.port,
@@ -44,5 +65,20 @@ export async function notifyContact(contact) {
     text,
   });
 
-  return { sent: true, dryRun: false };
+  return { sent: true, dryRun: false, provider: 'smtp' };
+}
+
+export async function notifyContact(contact) {
+  const text = formatContactText(contact);
+
+  if (hasResendConfig()) {
+    return sendWithResend(contact, text);
+  }
+
+  if (!hasSmtpConfig()) {
+    console.info('[mail:dry-run] contact', text);
+    return { sent: false, dryRun: true };
+  }
+
+  return sendWithSmtp(contact, text);
 }
