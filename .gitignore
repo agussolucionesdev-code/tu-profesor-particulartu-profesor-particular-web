@@ -1,4 +1,4 @@
-# dependencies
+﻿# dependencies
 node_modules/
 
 # builds
@@ -41,3 +41,8 @@ Thumbs.db
 *.jpeg
 *.webp
 .vercel
+
+# keep production assets in git
+!frontend/public/assets/
+!frontend/public/assets/**
+
