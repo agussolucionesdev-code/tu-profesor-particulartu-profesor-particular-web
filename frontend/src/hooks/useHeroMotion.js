@@ -15,8 +15,11 @@ export function useHeroMotion(rootRef) {
     const badges = root.querySelectorAll('[data-hero-badge]');
     const chips = root.querySelectorAll('[data-hero-chip]');
     const scrollIndicator = root.querySelector('[data-hero-scroll]');
+    const visualPanel = root.querySelector('.hero-visual-panel');
+    const aurora = root.querySelector('.hero-aurora');
     const rotatingWords = Array.from(root.querySelectorAll('.hero-rotate-word'));
     const loops = [];
+    const cleanupFns = [];
 
     if (prefersReducedMotion) {
       gsap.set([textItems, photo, photoSecondary, badges, chips, scrollIndicator], { clearProps: 'all', autoAlpha: 1 });
@@ -44,6 +47,48 @@ export function useHeroMotion(rootRef) {
             ease: 'sine.inOut',
           }),
         );
+      });
+
+      const onPointerMove = (event) => {
+        const rect = root.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        if (visualPanel) {
+          gsap.to(visualPanel, {
+            rotateY: x * 5,
+            rotateX: y * -4,
+            x: x * 10,
+            y: y * 8,
+            transformPerspective: 1200,
+            transformOrigin: 'center',
+            duration: 0.8,
+            ease: 'power3.out',
+            overwrite: 'auto',
+          });
+        }
+
+        if (aurora) {
+          gsap.to(aurora, {
+            x: x * 28,
+            y: y * 20,
+            duration: 1.2,
+            ease: 'power3.out',
+            overwrite: 'auto',
+          });
+        }
+      };
+
+      const onPointerLeave = () => {
+        if (visualPanel) gsap.to(visualPanel, { rotateY: 0, rotateX: 0, x: 0, y: 0, duration: 0.9, ease: 'expo.out' });
+        if (aurora) gsap.to(aurora, { x: 0, y: 0, duration: 0.9, ease: 'expo.out' });
+      };
+
+      root.addEventListener('pointermove', onPointerMove);
+      root.addEventListener('pointerleave', onPointerLeave);
+      cleanupFns.push(() => {
+        root.removeEventListener('pointermove', onPointerMove);
+        root.removeEventListener('pointerleave', onPointerLeave);
       });
     }
 
@@ -80,6 +125,7 @@ export function useHeroMotion(rootRef) {
     return () => {
       introTimeline.kill();
       loops.forEach((loop) => loop.kill());
+      cleanupFns.forEach((cleanup) => cleanup());
     };
   }, [prefersReducedMotion, rootRef]);
 }

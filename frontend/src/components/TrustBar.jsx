@@ -1,5 +1,6 @@
-﻿import RevealGroup from './motion/RevealGroup.jsx';
+import RevealGroup from './motion/RevealGroup.jsx';
 import { trustItems } from '../data/siteData.js';
+import { IconByKey } from '../lib/iconMap.jsx';
 
 function TrustMain({ item }) {
   return (
@@ -27,10 +28,10 @@ function TrustSub({ lines }) {
 export default function TrustBar() {
   return (
     <section aria-label="Credenciales y diferenciales" className="trust">
-      <RevealGroup className="trust-grid" variant="scale">
+      <RevealGroup className="trust-grid" variant="cards" stagger={0.07}>
         {trustItems.map((item) => (
-          <div className="trust-cell" key={`${item.icon}-${item.greenText}`}>
-            <div className="trust-icon-wrap">{item.icon}</div>
+          <div className="trust-cell" key={`${item.iconKey}-${item.greenText}`}>
+            <div className="trust-icon-wrap"><IconByKey iconKey={item.iconKey} size={22} /></div>
             <TrustMain item={item} />
             <TrustSub lines={item.subLines} />
           </div>
@@ -39,3 +40,4 @@ export default function TrustBar() {
     </section>
   );
 }
+

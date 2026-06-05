@@ -1,21 +1,40 @@
-﻿import { useRef } from 'react';
-import { ArrowRight, MessageCircle } from 'lucide-react';
-import { brand, images, whatsappMessages, whatsappUrl } from '../data/siteData.js';
+import { useRef } from 'react';
+import {
+  ArrowRight,
+  Award,
+  BookOpenCheck,
+  BrainCircuit,
+  CheckCircle2,
+  Clock3,
+  Compass,
+  GraduationCap,
+  MapPinned,
+  MessageCircle,
+  Sparkles,
+  Telescope,
+} from 'lucide-react';
+import { brand, heroHighlights, images, whatsappMessages, whatsappUrl } from '../data/siteData.js';
 import { useHeroMotion } from '../hooks/useHeroMotion.js';
 
-const rotatingSubjects = ['Matemática?', 'Física?', 'Química?', 'Inglés?', 'los exámenes?'];
-
 const heroChips = [
-  { icon: '🎓', label: 'Docente habilitado' },
-  { icon: '🧪', label: 'Técnico Químico' },
-  { icon: '📚', label: 'Temperley + Virtual' },
-  { icon: '⏱️', label: '+7 años' },
+  { icon: GraduationCap, label: 'Docente habilitado' },
+  { icon: BookOpenCheck, label: 'Ciencias de la Educaci\u00f3n' },
+  { icon: BrainCircuit, label: 'M\u00e9todo propio' },
+  { icon: MapPinned, label: 'Temperley + virtual' },
 ];
 
+const heroMetrics = [
+  { value: '+200', label: 'estudiantes acompa\u00f1ados' },
+  { value: '8+', label: 'a\u00f1os de experiencia' },
+  { value: '9.71', label: 'promedio en Educaci\u00f3n' },
+];
+
+const learningPath = ['Diagn\u00f3stico', 'Claridad', 'Pr\u00e1ctica', 'Seguimiento'];
+
 const floatingBadges = [
-  { className: 'hfb-top', tone: 'green', value: '+7', label: 'años de experiencia' },
-  { className: 'hfb-mid', tone: 'navy', value: "45'", label: '1ª clase gratis' },
-  { className: 'hfb-bot', tone: 'green', value: '6', label: 'niveles educativos' },
+  { className: 'hfb-top', tone: 'green', value: '+200', label: 'estudiantes acompa\u00f1ados' },
+  { className: 'hfb-mid', tone: 'navy', value: 'UAI', label: 'ponente 2024' },
+  { className: 'hfb-bot', tone: 'green', value: '9.71', label: 'promedio en Educaci\u00f3n' },
 ];
 
 export default function Hero() {
@@ -23,66 +42,116 @@ export default function Hero() {
   useHeroMotion(heroRef);
 
   return (
-    <section className="hero" id="hero" ref={heroRef}>
+    <section className="hero hero-premium" id="hero" ref={heroRef}>
       <div className="hero-shape hero-shape-1"></div>
       <div className="hero-shape hero-shape-2"></div>
       <div className="hero-shape hero-shape-3"></div>
+      <div aria-hidden="true" className="hero-grid-lines"></div>
+      <div aria-hidden="true" className="hero-aurora"></div>
 
       <div className="container">
-        <div className="hero-inner">
-          <div className="hero-text-col" id="heroText">
-            <div className="hero-ribbon" data-hero-intro>
+        <div className="hero-inner hero-inner-premium">
+          <div className="hero-text-col hero-copy-panel" id="heroText">
+            <div className="hero-ribbon hero-ribbon-premium" data-hero-intro>
               <span className="dot"></span>
-              1ª clase de 45 min · Completamente gratis
+              {'Primera clase de 45 min · gratis · diagn\u00f3stico real'}
             </div>
 
-            <h1 data-hero-intro>
-              ¿Te trabás con
+            <div className="hero-kicker" data-hero-intro>
+              <Sparkles aria-hidden="true" size={15} />
+              {'Clases particulares con m\u00e9todo, humanidad y seguimiento entre clases'}
+            </div>
+
+            <h1 className="hero-title-premium" data-hero-intro>
+              {'No necesit\u00e1s'}
               <br />
-              <span aria-hidden="true" className="hero-rotate-wrap" id="rotateWrap">
-                {rotatingSubjects.map((subject, index) => (
-                  <span className={`hero-rotate-word${index === 0 ? ' active' : ''}`} key={subject}>
-                    {subject}
-                  </span>
-                ))}
-              </span>
-              <span className="hero-rotate-mobile">los exámenes?</span>
-              <span className="sr-only">los exámenes</span>
+              <span className="hero-static-word">{'otro profe m\u00e1s.'}</span>
               <br />
-              <em>Yo te lo resuelvo.</em>
+              <em>{'Necesit\u00e1s claridad.'}</em>
             </h1>
 
-            <p className="hero-sub2" data-hero-intro>
-              Soy <strong>Agustín</strong>, docente habilitado con <strong>más de 7 años</strong> ayudando a estudiantes
-              que creían que no podían — y pudieron. No te vendo milagros: te ofrezco{' '}
-              <strong>tiempo, claridad y compromiso real.</strong>
+            <p className="hero-sub2 hero-sub-premium" data-hero-intro>
+              {'Soy '}<strong>{'Agust\u00edn El\u00edas Sosa'}</strong>{': docente habilitado, T\u00e9cnico Qu\u00edmico y estudiante avanzado de Ciencias de la Educaci\u00f3n. Acompa\u00f1o Matem\u00e1tica, F\u00edsica, Qu\u00edmica e Ingl\u00e9s con una idea simple: primero entendemos qu\u00e9 te traba, despu\u00e9s construimos un camino que puedas sostener.'}
             </p>
 
-            <div className="hero-trust" data-hero-intro>
-              {heroChips.map((chip) => (
-                <span className="hero-chip" data-hero-chip key={chip.label}>
-                  <span className="chip-icon">{chip.icon}</span> {chip.label}
-                </span>
+            <div className="hero-metric-rail" data-hero-intro>
+              {heroMetrics.map((metric) => (
+                <div className="hero-metric" key={metric.value}>
+                  <strong>{metric.value}</strong>
+                  <span>{metric.label}</span>
+                </div>
               ))}
             </div>
 
-            <div className="hero-ctas2" data-hero-intro>
-              <a className="btn btn-wa hero-cta-main" href={whatsappUrl(whatsappMessages.firstClass)} target="_blank" rel="noreferrer">
+            <div className="hero-trust" data-hero-intro>
+              {heroChips.map((chip) => {
+                const Icon = chip.icon;
+                return (
+                  <span className="hero-chip" data-hero-chip key={chip.label}>
+                    <Icon aria-hidden="true" size={15} />
+                    {chip.label}
+                  </span>
+                );
+              })}
+            </div>
+
+            <div className="hero-ctas2 hero-cta-stack" data-hero-intro>
+              <a className="btn btn-wa hero-cta-main btn-cta-pulse" href={whatsappUrl(whatsappMessages.firstClass)} rel="noreferrer" target="_blank">
                 <MessageCircle aria-hidden="true" size={18} />
-                Quiero mi clase gratis
+                {'Quiero mi clase gratis'}
               </a>
               <a className="btn btn-outline hero-cta-secondary" href="#metodo">
-                Conocé mi método
+                {'Ver c\u00f3mo trabajo'}
                 <ArrowRight aria-hidden="true" size={16} />
               </a>
             </div>
+
+            <div className="hero-learning-path" data-hero-intro>
+              {learningPath.map((step, index) => (
+                <div className="hero-path-step" key={step}>
+                  <span>{index + 1}</span>
+                  <strong>{step}</strong>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="hero-photo-col" id="heroPhoto">
+          <div className="hero-photo-col hero-visual-panel" id="heroPhoto">
             <div className="hero-ring hero-ring-1"></div>
             <div className="hero-ring hero-ring-2"></div>
-            <img alt={`${brand.owner}, profesor particular de Matemática, Física, Química e Inglés`} className="hero-photo-v2" data-hero-photo decoding="async" fetchPriority="high" height="1296" src={images.hero} width="970" />
-            <img alt="" aria-hidden="true" className="hero-photo2" data-hero-photo-secondary decoding="async" height="1296" src={images.heroSecondary} width="970" />
+
+            <div className="hero-photo-shell hero-photo-shell-premium">
+              <div className="hero-photo-card hero-photo-card-top" data-hero-badge>
+                <Telescope aria-hidden="true" size={16} />
+                <div>
+                  <strong>{'Ponencia UAI 2024'}</strong>
+                  <span>{'“Los afectos en la educaci\u00f3n”'}</span>
+                </div>
+              </div>
+
+              <img alt={`${brand.owner}, profesor particular de Matem\u00e1tica, F\u00edsica, Qu\u00edmica e Ingl\u00e9s`} className="hero-photo-v2" data-hero-photo decoding="async" fetchPriority="high" height="1296" src={images.hero} width="970" />
+              <img alt="" aria-hidden="true" className="hero-photo2" data-hero-photo-secondary decoding="async" height="1296" src={images.heroSecondary} width="970" />
+
+              <div className="hero-photo-card hero-photo-card-bottom" data-hero-badge>
+                <Award aria-hidden="true" size={18} />
+                <div>
+                  <strong>{'Aprendizaje significativo'}</strong>
+                  <span>{'claridad + pr\u00e1ctica + confianza'}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-method-card" data-hero-badge>
+              <div className="hero-method-card-head">
+                <Compass aria-hidden="true" size={18} />
+                <span>{'Ruta de trabajo'}</span>
+              </div>
+              <ul>
+                <li><CheckCircle2 aria-hidden="true" size={15} />{'Diagn\u00f3stico inicial sin costo'}</li>
+                <li><CheckCircle2 aria-hidden="true" size={15} />{'Plan adaptado a tu nivel real'}</li>
+                <li><Clock3 aria-hidden="true" size={15} />{'Seguimiento por WhatsApp'}</li>
+              </ul>
+            </div>
 
             {floatingBadges.map((badge) => (
               <div className={`hero-float-badge ${badge.className}`} data-hero-badge key={badge.className}>

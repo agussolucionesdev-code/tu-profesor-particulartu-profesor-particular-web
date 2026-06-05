@@ -453,3 +453,195 @@ body.drawer-open {
     animation: none !important;
   }
 }
+
+/* STAGE 8.6 — Mobile quick actions must not overlap premium navbar */
+@media (max-width: 860px) {
+  .quick-actions {
+    top: auto !important;
+    right: 14px !important;
+    bottom: 18px !important;
+    transform: none !important;
+    gap: 10px !important;
+    z-index: 120 !important;
+  }
+
+  .quick-action {
+    min-width: 48px !important;
+    min-height: 48px !important;
+    border-radius: 999px !important;
+  }
+
+  .quick-action span {
+    display: none !important;
+  }
+}
+
+/* STAGE 8.7 — Mobile conversion clarity: sticky nav CTA replaces floating cluster */
+@media (max-width: 860px) {
+  .quick-actions {
+    display: none !important;
+  }
+}
+
+/* STAGE 8.8 — Premium mobile drawer composition */
+.nav-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 240;
+  display: grid;
+  pointer-events: none;
+}
+
+.nav-drawer:not([hidden]) {
+  pointer-events: auto;
+}
+
+.nav-drawer[hidden] {
+  display: none !important;
+}
+
+.nav-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 18, 32, .46);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-drawer-panel {
+  position: relative;
+  z-index: 1;
+  width: min(390px, calc(100vw - 28px));
+  height: calc(100dvh - 28px);
+  margin: 14px 14px 14px auto;
+  padding: 18px;
+  overflow-y: auto;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,.58);
+  box-shadow: 0 30px 90px rgba(7, 18, 32, .28);
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.drawer-header img {
+  width: 96px !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.drawer-close {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(28,53,88,.10);
+  border-radius: 999px;
+  background: rgba(255,255,255,.82);
+  color: var(--navy-800);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(16,33,55,.10);
+}
+
+.drawer-links {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(28,53,88,.07);
+  background: rgba(255,255,255,.76);
+  color: var(--navy-800);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(16,33,55,.055);
+}
+
+.drawer-link-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  color: var(--green);
+  background: rgba(74,153,87,.12);
+}
+
+.drawer-link:hover {
+  transform: translateX(-2px);
+  border-color: rgba(74,153,87,.22);
+  background: #fff;
+}
+
+.drawer-cta {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(28,53,88,.08);
+}
+
+.drawer-free {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(74,153,87,.12);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 430px) {
+  .nav-drawer-panel {
+    width: calc(100vw - 20px);
+    height: calc(100dvh - 20px);
+    margin: 10px;
+    padding: 14px;
+    border-radius: 26px;
+  }
+
+  .drawer-link {
+    min-height: 50px;
+  }
+}
+
+/* STAGE 8.9 — Drawer sits below sticky premium nav on mobile */
+@media (max-width: 860px) {
+  .nav-drawer-panel {
+    height: calc(100dvh - 104px) !important;
+    margin-top: 90px !important;
+  }
+}
+
+/* STAGE 8.13 - Keep floating action cluster paint box tight */
+.quick-actions {
+  width: max-content !important;
+  height: auto !important;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+}
+/* STAGE 8.14 - Isolate floating nav from global header nav rule */
+.quick-actions {
+  top: auto !important;
+  left: auto !important;
+  right: 22px !important;
+  bottom: 22px !important;
+}

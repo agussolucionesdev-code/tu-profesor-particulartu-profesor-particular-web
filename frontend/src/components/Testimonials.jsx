@@ -1,59 +1,22 @@
 ﻿import { MessageCircle } from 'lucide-react';
 import Reveal from './motion/Reveal.jsx';
 import RevealGroup from './motion/RevealGroup.jsx';
-import { whatsappMessages, whatsappUrl } from '../data/siteData.js';
+import { testimonialItems, whatsappMessages, whatsappUrl } from '../data/siteData.js';
 
 export default function Testimonials() {
   return (
     <section className="testi-bg" id="testimonios">
       <div className="container">
-        <Reveal style={{ textAlign: 'center', maxWidth: '580px', margin: '0 auto 44px' }}>
-          <div className="section-label">Testimonios</div>
-          <h2 className="section-title">
-            7 años de boca en boca.
-            <br />
-            Ahora lo hacemos en serio.
-          </h2>
-          <p className="section-desc" style={{ fontSize: '16px', margin: '0 auto' }}>
-            Toda mi vida conseguí alumnos por recomendación. Nunca tuve redes ni publicidad. Estos son algunos de esos testimonios.
-          </p>
+        <Reveal className="testi-heading" style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 44px' }}>
+          <div className="section-label">{'Prueba social'}</div>
+          <h2 className="section-title">{'La confianza se gana'}<br />{'clase a clase.'}</h2>
+          <p className="section-desc" style={{ fontSize: '16px', margin: '0 auto' }}>{'No crecí por promesas lindas. Crecí acompañando procesos reales, familias reales y estudiantes que necesitaban claridad, paciencia y presencia de verdad.'}</p>
         </Reveal>
         <RevealGroup className="testi-grid" variant="scale" stagger={0.1}>
-          <div className="testi-card">
-            <div className="testi-q">"</div>
-            <div className="testi-stars">★★★★★</div>
-            <p className="testi-text">Reprobé Matemática dos veces antes de conocer a Agustín. En dos meses aprobé con 8. Tiene una paciencia que no vi en ningún otro profe.</p>
-            <div className="testi-author">
-              <div className="testi-avatar">M</div>
-              <div className="testi-info">
-                <strong>Marcos R.</strong>
-                <span>Universitario · Ingeniería</span>
-              </div>
-            </div>
-          </div>
-          <div className="testi-card">
-            <div className="testi-q">"</div>
-            <div className="testi-stars">★★★★★</div>
-            <p className="testi-text">Mi hija estaba muy atrasada en Química del técnico. Agustín fue al ritmo de ella, sin presionarla. Cerró el año con todo aprobado. Le decimos “el profe de la familia”.</p>
-            <div className="testi-author">
-              <div className="testi-avatar">S</div>
-              <div className="testi-info">
-                <strong>Silvia P.</strong>
-                <span>Mamá de alumna · Sec. Técnico</span>
-              </div>
-            </div>
-          </div>
-          <div className="testi-card testi-cta">
-            <strong>¿Tuviste clases conmigo?</strong>
-            <p>Si fui tu profe en algún momento, me gustaría mucho que puedas dejar tu experiencia. Me ayuda un montón a seguir creciendo.</p>
-            <a className="btn btn-primary" href={whatsappUrl(whatsappMessages.testimonial)} target="_blank" rel="noreferrer">
-              <MessageCircle aria-hidden="true" size={18} /> Dejar mi testimonio
-            </a>
-          </div>
+          {testimonialItems.map((item) => <article className="testi-card" key={item.name}><div className="testi-q">“</div><div className="testi-stars">★★★★★</div><p className="testi-text">{item.quote}</p><div className="testi-author"><div className="testi-avatar">{item.avatar}</div><div className="testi-info"><strong>{item.name}</strong><span>{item.role}</span></div></div></article>)}
+          <article className="testi-card testi-cta premium-cta-card"><strong>{'¿Tuviste clases conmigo?'}</strong><p>{'Si compartimos un proceso, me ayudaría muchísimo que me dejes tu experiencia. Cada recomendación sostiene este proyecto.'}</p><a className="btn btn-wa" href={whatsappUrl(whatsappMessages.testimonial)} rel="noreferrer" target="_blank"><MessageCircle aria-hidden="true" size={18} />{'Dejar mi testimonio'}</a></article>
         </RevealGroup>
-        <p style={{ fontSize: '11px', color: 'var(--muted)', textAlign: 'center', marginTop: '20px', fontStyle: 'italic' }}>
-          * Testimonios representativos de experiencias reales. Se actualizarán con autorización.
-        </p>
+        <p style={{ fontSize: '11px', color: 'var(--muted)', textAlign: 'center', marginTop: '20px', fontStyle: 'italic' }}>{'* Testimonios representativos de experiencias reales. Se ampliarán con autorización de cada familia o estudiante.'}</p>
       </div>
     </section>
   );

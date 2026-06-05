@@ -4,9 +4,10 @@ import { gsap } from 'gsap';
 import { useReducedMotion } from '../../hooks/useReducedMotion.js';
 
 const groupVariants = {
-  up: { autoAlpha: 0, y: 22 },
-  scale: { autoAlpha: 0, y: 18, scale: 0.97 },
-  side: { autoAlpha: 0, x: 20 },
+  up: { autoAlpha: 0, y: 28, filter: 'blur(8px)' },
+  scale: { autoAlpha: 0, y: 24, scale: 0.94, filter: 'blur(8px)' },
+  side: { autoAlpha: 0, x: 28, rotateY: -4, filter: 'blur(8px)' },
+  cards: { autoAlpha: 0, y: 34, scale: 0.92, rotateX: 7, transformPerspective: 900, filter: 'blur(10px)' },
 };
 
 export default function RevealGroup({
@@ -39,7 +40,7 @@ export default function RevealGroup({
     if (!elements.length) return;
 
     if (prefersReducedMotion) {
-      gsap.set(elements, { clearProps: 'all', autoAlpha: 1, x: 0, y: 0, scale: 1 });
+      gsap.set(elements, { clearProps: 'all', autoAlpha: 1, x: 0, y: 0, scale: 1, rotateX: 0, rotateY: 0, filter: 'none' });
       return;
     }
 
@@ -59,10 +60,13 @@ export default function RevealGroup({
       x: 0,
       y: 0,
       scale: 1,
+      rotateX: 0,
+      rotateY: 0,
+      filter: 'blur(0px)',
       duration,
       delay,
       stagger,
-      ease: 'power3.out',
+      ease: 'expo.out',
       overwrite: 'auto',
     });
   }, [childSelector, delay, duration, inView, prefersReducedMotion, stagger]);

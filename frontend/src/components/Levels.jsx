@@ -1,12 +1,13 @@
-﻿import Reveal from './motion/Reveal.jsx';
+import { Sparkles } from 'lucide-react';
+import Reveal from './motion/Reveal.jsx';
 import RevealGroup from './motion/RevealGroup.jsx';
 import { levels } from '../data/siteData.js';
 
 export default function Levels() {
   return (
-    <section id="niveles">
+    <section className="levels-section" id="niveles">
       <div className="container">
-        <div className="niveles-inner">
+        <div className="niveles-inner premium-split-card">
           <Reveal variant="left">
             <div className="section-label">{levels.label}</div>
             <h2 className="section-title">
@@ -14,9 +15,7 @@ export default function Levels() {
               <br />
               {levels.titleLine2}
             </h2>
-            <p className="section-desc" style={{ fontSize: 16 }}>
-              {levels.description}
-            </p>
+            <p className="section-desc levels-copy">{levels.description}</p>
             <RevealGroup className="niveles-chips" variant="scale" stagger={0.06}>
               {levels.chips.map((chip) => (
                 <span className="nivel-chip" key={chip}>{chip}</span>
@@ -24,12 +23,12 @@ export default function Levels() {
             </RevealGroup>
           </Reveal>
           <Reveal as="div" className="niveles-visual" variant="right">
-            <h3>{levels.visualTitle}</h3>
-            <p style={{ fontSize: 14, opacity: 0.7 }}>{levels.visualSubtitle}</p>
+            <div className="niveles-visual-kicker"><Sparkles aria-hidden="true" size={14} /> {levels.visualTitle}</div>
+            <h3>{levels.visualSubtitle}</h3>
             <RevealGroup as="ul" className="niveles-list" stagger={0.08}>
               {levels.supportItems.map((item) => (
                 <li key={item}>
-                  <span className="check">✓</span>
+                  <span className="check"></span>
                   {item}
                 </li>
               ))}
@@ -40,3 +39,4 @@ export default function Levels() {
     </section>
   );
 }
+

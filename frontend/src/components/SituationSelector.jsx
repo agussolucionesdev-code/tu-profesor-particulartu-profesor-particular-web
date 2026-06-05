@@ -1,18 +1,19 @@
-﻿import Reveal from './motion/Reveal.jsx';
+﻿import { MessageCircle } from 'lucide-react';
+import Reveal from './motion/Reveal.jsx';
 import { situationSelector } from '../data/siteData.js';
 
 export default function SituationSelector() {
   return (
     <section className="selector-bg" id="selector">
       <div className="container">
-        <Reveal style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto 0' }}>
+        <Reveal style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto 0' }}>
           <div className="section-label" style={{ color: 'var(--green)' }}>{situationSelector.label}</div>
           <h2 className="section-title" style={{ color: '#fff' }}>
             {situationSelector.titleLine1}
             <br />
             {situationSelector.titleLine2}
           </h2>
-          <p className="section-desc" style={{ color: 'rgba(255,255,255,.6)' }}>
+          <p className="section-desc" style={{ color: 'rgba(255,255,255,.68)' }}>
             {situationSelector.description}
           </p>
         </Reveal>
@@ -39,7 +40,8 @@ export default function SituationSelector() {
             <div className="selector-msg-box">
               <p id="selector-msg"></p>
               <a className="btn btn-wa" href="#" id="selector-wa" target="_blank" rel="noreferrer">
-                💬 Hablemos por WhatsApp
+                <MessageCircle aria-hidden="true" size={18} />
+                {'Hablemos por WhatsApp'}
               </a>
             </div>
           </div>

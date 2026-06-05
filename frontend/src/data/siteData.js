@@ -4,9 +4,9 @@ export const contact = {
   email: 'agustinsosa.profe@gmail.com',
   instagram: 'https://www.instagram.com/tuprofesor.ar/',
   instagramHandle: '@tuprofesor.ar',
+  linkedin: 'https://www.linkedin.com/in/agustineliassosa/',
   location: 'Temperley, Buenos Aires',
-  firstClassMessage:
-    'Hola Agustín, quiero información sobre las clases y la primera clase gratis',
+  firstClassMessage: 'Hola Agust\u00edn, quiero informaci\u00f3n sobre las clases y la primera clase gratis',
 };
 
 export const logos = {
@@ -26,531 +26,85 @@ export const images = {
 
 export const brand = {
   name: 'Tu Profesor Particular',
-  owner: 'Agustín Elías Sosa',
-  copyright: '© 2026 Agustín Elías Sosa · Tu Profesor Particular · Temperley, Bs. As.',
+  owner: 'Agust\u00edn El\u00edas Sosa',
+  copyright: '\u00a9 2026 Agust\u00edn El\u00edas Sosa \u00b7 Tu Profesor Particular \u00b7 Temperley, Bs. As.',
 };
 
 export const navItems = [
-  { section: 'materias', href: '#materias', icon: '📚', label: 'Materias' },
-  { section: 'metodo', href: '#metodo', icon: '🧭', label: 'Método' },
-  { section: 'sobre', href: '#sobre', icon: '👤', label: 'Sobre mí' },
-  { section: 'carta', href: '#carta', icon: '✉️', label: 'Mi historia' },
-  { section: 'faq', href: '#faq', icon: '❓', label: 'FAQ' },
+  { section: 'materias', href: '#materias', iconKey: 'book-open', label: 'Materias' },
+  { section: 'metodo', href: '#metodo', iconKey: 'brain', label: 'M\u00e9todo' },
+  { section: 'sobre', href: '#sobre', iconKey: 'user-round', label: 'Sobre m\u00ed' },
+  { section: 'carta', href: '#carta', iconKey: 'pen-tool', label: 'Mi historia' },
+  { section: 'faq', href: '#faq', iconKey: 'circle-help', label: 'FAQ' },
 ];
 
 export const drawerItems = [
-  { icon: '📚', label: 'Materias' },
-  { icon: '🎁', label: '¿Cuál es tu caso?' },
-  { icon: '🧭', label: 'Mi método' },
-  { icon: '👤', label: 'Sobre mí' },
-  { icon: '✉️', label: 'Mi historia' },
-  { icon: '⭐', label: 'Testimonios' },
-  { icon: '❓', label: 'Preguntas frecuentes' },
+  { iconKey: 'book-open', label: 'Materias' },
+  { iconKey: 'sliders-horizontal', label: 'Tu situaci\u00f3n' },
+  { iconKey: 'brain', label: 'Mi m\u00e9todo' },
+  { iconKey: 'user-round', label: 'Sobre m\u00ed' },
+  { iconKey: 'pen-tool', label: 'Mi historia' },
+  { iconKey: 'message-square-quote', label: 'Testimonios' },
+  { iconKey: 'circle-help', label: 'Preguntas frecuentes' },
 ];
 
 export const whatsappMessages = {
   firstClass: contact.firstClassMessage,
-  readPage: 'Hola Agustín, leí tu página y quiero la clase gratis',
-  method: 'Hola Agustín, quiero empezar con el método',
-  individualPresencial: 'Hola Agustín, me interesa una clase individual presencial',
-  individualVirtual: 'Hola Agustín, me interesa una clase individual virtual',
-  groupPresencial: 'Hola Agustín, me interesa una clase grupal presencial',
-  groupVirtual: 'Hola Agustín, me interesa una clase grupal virtual',
-  testimonial: 'Hola Agustín, quiero dejarte mi testimonio',
+  readPage: 'Hola Agust\u00edn, le\u00ed tu p\u00e1gina y quiero la clase gratis',
+  method: 'Hola Agust\u00edn, quiero empezar con tu m\u00e9todo de trabajo',
+  individualPresencial: 'Hola Agust\u00edn, me interesa una clase individual presencial',
+  individualVirtual: 'Hola Agust\u00edn, me interesa una clase individual virtual',
+  groupPresencial: 'Hola Agust\u00edn, me interesa una clase grupal presencial',
+  groupVirtual: 'Hola Agust\u00edn, me interesa una clase grupal virtual',
+  testimonial: 'Hola Agust\u00edn, quiero dejarte mi testimonio',
 };
 
+export const heroHighlights = [
+  { eyebrow: 'Docente habilitado', title: 'Acompa\u00f1amiento real', description: 'Con mirada pedag\u00f3gica, paciencia y estrategia did\u00e1ctica.' },
+  { eyebrow: 'T\u00e9cnico Qu\u00edmico', title: 'Base t\u00e9cnica s\u00f3lida', description: 'Especialmente fuerte en Matem\u00e1tica, F\u00edsica y Qu\u00edmica.' },
+  { eyebrow: 'Educaci\u00f3n + tecnolog\u00eda', title: 'Clases actuales', description: 'Uso pedag\u00f3gico de IA, recursos digitales y seguimiento continuo.' },
+];
+
 export const modalityAxes = [
-  {
-    label: '¿Cómo querés estudiar?',
-    axis: 'modo',
-    options: [
-      { value: 'individual', label: 'Individual', icon: '👤', active: true },
-      { value: 'grupal', label: 'Grupal', icon: '👥' },
-    ],
-  },
-  {
-    label: '¿Dónde?',
-    axis: 'lugar',
-    options: [
-      { value: 'presencial', label: 'Presencial', icon: '📚', active: true },
-      { value: 'virtual', label: 'Virtual', icon: '💬' },
-    ],
-  },
+  { label: '\u00bfC\u00f3mo quer\u00e9s estudiar?', axis: 'modo', options: [{ value: 'individual', label: 'Individual', iconKey: 'user-round', active: true }, { value: 'grupal', label: 'Grupal', iconKey: 'users-round' }] },
+  { label: '\u00bfD\u00f3nde?', axis: 'lugar', options: [{ value: 'presencial', label: 'Presencial', iconKey: 'map-pinned', active: true }, { value: 'virtual', label: 'Virtual', iconKey: 'monitor-smartphone' }] },
 ];
 
 export const modalityPanels = [
-  {
-    id: 'panel-individual-presencial',
-    active: true,
-    image: images.presencial,
-    imageAlt: 'Clase particular presencial en Temperley con seguimiento personalizado',
-    tag: 'La más personalizada',
-    title: 'Cara a cara.',
-    emphasis: 'Sin distracciones.',
-    description:
-      'Todo el tiempo de la clase es tuyo. Trabajamos en Temperley, en el ritmo que necesitás, con material físico y un vínculo real de aprendizaje.',
-    features: [
-      'Atención 100% personalizada',
-      'Temperley y alrededores, GBA Sur',
-      'Material físico incluido',
-      'Punto de partida y plan de estudio a medida',
-    ],
-    messageKey: 'individualPresencial',
-  },
-  {
-    id: 'panel-individual-virtual',
-    image: images.virtual,
-    imageAlt: 'Clase virtual individual con acompañamiento personalizado',
-    tag: 'Desde cualquier lugar',
-    title: 'El mismo profe.',
-    emphasis: 'Desde tu casa.',
-    description:
-      'No importa dónde estés en Argentina. Tenés toda mi atención, misma calidad, misma dedicación. Con plataformas interactivas y posibilidad de grabación.',
-    features: ['Todo el país y exterior', 'Plataformas digitales interactivas', 'Grabaciones disponibles', 'Flexible en horarios'],
-    messageKey: 'individualVirtual',
-  },
-  {
-    id: 'panel-grupal-presencial',
-    image: images.group,
-    imageAlt: 'Clase grupal presencial para estudiar con compañeros',
-    tag: 'Mejor precio por persona',
-    title: 'Estudiá con',
-    emphasis: 'tus compañeros.',
-    description:
-      'La dinámica grupal potencia el aprendizaje. Se comparte el costo y se multiplica la energía. Ideal para grupos de la misma materia o del mismo año.',
-    features: ['2 a 4 alumnos por grupo', 'Precio reducido por persona', 'Temperley y alrededores', 'Dinámica colaborativa'],
-    messageKey: 'groupPresencial',
-  },
-  {
-    id: 'panel-grupal-virtual',
-    image: images.heroSecondary,
-    imageAlt: 'Clase grupal virtual para estudiar desde cualquier lugar',
-    tag: 'El más accesible',
-    title: 'Grupo online.',
-    emphasis: 'Sin importar distancias.',
-    description:
-      'Perfecto para grupos de estudio universitarios o amigos de distintos barrios. Se divide el costo, se aprovecha la clase y cada uno desde su casa.',
-    features: ['El precio más accesible', 'Sin limitaciones geográficas', 'Plataformas colaborativas', 'Ideal para parciales grupales'],
-    messageKey: 'groupVirtual',
-  },
+  { id: 'panel-individual-presencial', active: true, image: images.presencial, imageAlt: 'Clase particular presencial en Temperley con seguimiento personalizado', tag: 'La m\u00e1s personalizada', title: 'Cara a cara.', emphasis: 'Sin distracciones.', description: 'Todo el tiempo de la clase es tuyo. Trabajamos en Temperley, a tu ritmo, con material concreto y un v\u00ednculo real de aprendizaje.', features: ['Atenci\u00f3n 100% personalizada', 'Temperley y alrededores, GBA Sur', 'Material de apoyo incluido', 'Plan de estudio hecho a medida'], messageKey: 'individualPresencial' },
+  { id: 'panel-individual-virtual', image: images.virtual, imageAlt: 'Clase virtual individual con acompa\u00f1amiento personalizado', tag: 'Desde cualquier lugar', title: 'La misma presencia.', emphasis: 'Desde tu casa.', description: 'No importa d\u00f3nde est\u00e9s. Ten\u00e9s la misma dedicaci\u00f3n, la misma claridad y un formato pensado para sostener foco, pr\u00e1ctica y seguimiento.', features: ['Virtual para toda Argentina', 'Plataformas interactivas', 'Material digital ordenado', 'Horarios m\u00e1s flexibles'], messageKey: 'individualVirtual' },
+  { id: 'panel-grupal-presencial', image: images.group, imageAlt: 'Clase grupal presencial para estudiar con compa\u00f1eros', tag: 'Compart\u00eds costo y energ\u00eda', title: 'Estudi\u00e1 con', emphasis: 'tus compa\u00f1eros.', description: 'Ideal para grupos del mismo a\u00f1o o materia. Se comparte el costo, se potencia la motivaci\u00f3n y cada encuentro sigue teniendo estructura y acompa\u00f1amiento.', features: ['2 a 4 alumnos por grupo', 'Precio reducido por persona', 'Presencial en zona sur', 'Din\u00e1mica colaborativa'], messageKey: 'groupPresencial' },
+  { id: 'panel-grupal-virtual', image: images.heroSecondary, imageAlt: 'Clase grupal virtual para estudiar desde cualquier lugar', tag: 'La opci\u00f3n m\u00e1s flexible', title: 'Grupo online.', emphasis: 'Sin importar distancias.', description: 'Perfecto para grupos de estudio, parciales o acompa\u00f1amiento continuo. Cada uno desde su casa, con una clase ordenada y participativa.', features: ['Costo m\u00e1s accesible', 'Sin l\u00edmites geogr\u00e1ficos', 'Herramientas colaborativas', 'Ideal para parciales y finales'], messageKey: 'groupVirtual' },
 ];
 
-export const methodCompareRows = [
-  ['El profe habla, el alumno escucha', 'Construimos juntos desde el primer día'],
-  ['Mismo ritmo para todos', 'Tu ritmo, tu punto de partida, tu plan'],
-  ['Se acaba la hora y chau', 'Acompañamiento entre clases incluido'],
-  ['Si no entendiste, repetimos igual', 'Otro ángulo, otro ejemplo, hasta que queda'],
-];
+export const methodCompareRows = [['El profe habla y el alumno intenta seguir', 'Construimos juntos desde tu punto de partida real'], ['Mismo ritmo para todos', 'Tu ritmo, tu contexto y tu plan'], ['La clase termina y qued\u00e1s solo', 'Seguimiento entre clases por WhatsApp'], ['Si no entendiste, se repite igual', 'Busco otro ejemplo hasta que haga clic']];
 
 export const methodSteps = [
-  {
-    number: 1,
-    navLabel: 'Escucho',
-    icon: '🎯',
-    title: 'Primero',
-    emphasis: 'te escucho.',
-    quote: '"No arranco hasta saber quién tengo enfrente y de dónde viene."',
-    description:
-      'Antes de explicar una sola cosa, necesito entender tu situación real. Dónde trabaste, cómo estudiás, qué te genera presión, qué contexto tenés. Ese primer encuentro no es un trámite: es la base de todo.',
-    points: [
-      'Primera clase de 45 min completamente gratis',
-      'Entendemos juntos de dónde partimos',
-      'Identificación de puntos críticos específicos',
-      'Plan de trabajo adaptado a tu realidad',
-    ],
-  },
-  {
-    number: 2,
-    navLabel: 'Explico',
-    icon: '🗣️',
-    title: 'Lo explico',
-    emphasis: 'hasta que queda.',
-    quote: '"Si no quedó claro, es mi problema, no el tuyo."',
-    description:
-      'No sigo adelante hasta que el tema esté claro. Si la primera explicación no funcionó, busco otro ángulo, otra analogía, otro ejemplo. Sin tecnicismos innecesarios, sin apuro, sin juzgar.',
-    points: [
-      'Explicaciones sin tecnicismos inútiles',
-      'Múltiples ángulos hasta que haga clic',
-      'Ejemplos concretos y cotidianos',
-      'Sin presión ni juicio ante el error',
-    ],
-  },
-  {
-    number: 3,
-    navLabel: 'Practicamos',
-    icon: '🧭',
-    title: 'Hacemos',
-    emphasis: 'juntos.',
-    quote: '"El error no se castiga: se aprovecha para aprender."',
-    description:
-      'No soy el tipo que explica y se cruza de brazos. Ejercitamos, construimos apuntes, nos equivocamos y lo corregimos juntos. La práctica activa es donde el conocimiento realmente se consolida.',
-    points: [
-      'Ejercitación activa en cada clase',
-      'Construcción conjunta de apuntes',
-      'El error como herramienta de aprendizaje',
-      'Preparación específica para exámenes',
-    ],
-  },
-  {
-    number: 4,
-    navLabel: 'Acompaño',
-    icon: '📲',
-    title: 'No desaparezco',
-    emphasis: 'entre clases.',
-    quote: '"El aprendizaje no termina cuando termina la hora."',
-    description:
-      'Si entre semana te surge una duda, me mandás un mensaje. Sin costo adicional. El seguimiento real es lo que diferencia una clase de un acompañamiento verdadero.',
-    points: [
-      'Consultas por WhatsApp entre clases',
-      'Seguimiento del progreso semana a semana',
-      'Ajuste del plan según cómo va el proceso',
-      'Disponibilidad real, no solo en horario',
-    ],
-    finalCta: true,
-  },
+  { number: 1, navLabel: 'Escucho', iconKey: 'ear', title: 'Primero', emphasis: 'te escucho.', quote: '\u201cNo arranco hasta entender qui\u00e9n tengo enfrente, qu\u00e9 le cuesta y qu\u00e9 necesita de verdad.\u201d', description: 'La primera clase es para conocer tu situaci\u00f3n real: nivel, materia, frustraciones, tiempos y objetivos. Sin ese diagn\u00f3stico, cualquier clase ser\u00eda improvisada.', points: ['Primera clase de 45 min completamente gratis', 'Diagn\u00f3stico claro de tu punto de partida', 'Detecci\u00f3n de trabas espec\u00edficas', 'Plan de trabajo alineado a tu realidad'] },
+  { number: 2, navLabel: 'Explico', iconKey: 'speech', title: 'Despu\u00e9s', emphasis: 'lo aclaro.', quote: '\u201cSi no qued\u00f3 claro, no es problema tuyo: es mi tarea encontrar la mejor forma de explicarlo.\u201d', description: 'Uso recursos did\u00e1cticos, analog\u00edas, ejemplos concretos y herramientas visuales para que el contenido deje de sentirse lejano o imposible.', points: ['Explicaciones sin humo ni tecnicismos innecesarios', 'Distintos \u00e1ngulos hasta encontrar el que te sirve', 'Ejemplos concretos y cotidianos', 'Paciencia real frente al error'] },
+  { number: 3, navLabel: 'Practicamos', iconKey: 'pen-line', title: 'Despu\u00e9s', emphasis: 'lo trabajamos.', quote: '\u201cEl error no se castiga: se usa para aprender mejor.\u201d', description: 'No me quedo en la explicaci\u00f3n. Practicamos, corregimos, construimos apuntes y entrenamos exactamente lo que necesit\u00e1s para rendir mejor y sentirte m\u00e1s seguro.', points: ['Pr\u00e1ctica guiada en cada clase', 'Construcci\u00f3n conjunta de apuntes', 'Preparaci\u00f3n espec\u00edfica para ex\u00e1menes', 'Seguimiento del proceso y no solo del resultado'] },
+  { number: 4, navLabel: 'Acompa\u00f1o', iconKey: 'heart-handshake', title: 'Y entre clases', emphasis: 'no desaparezco.', quote: '\u201cEl aprendizaje no termina cuando termina la hora: se sostiene con presencia y seguimiento.\u201d', description: 'Si aparece una duda puntual, me escrib\u00eds. El acompa\u00f1amiento real incluye responder, reencuadrar y ajustar el plan seg\u00fan c\u00f3mo avance tu proceso.', points: ['Consultas por WhatsApp entre clases', 'Seguimiento del progreso semana a semana', 'Ajuste del plan seg\u00fan evoluci\u00f3n real', 'Acompa\u00f1amiento humano, no autom\u00e1tico'], finalCta: true },
 ];
 
-export const methodStats = [
-  { value: '7+', target: '7', suffix: '+', labelLines: ['años aplicando', 'el método'] },
-  { value: '6', target: '6', suffix: '', labelLines: ['niveles', 'educativos'] },
-  { value: '100%', labelLines: ['personalizado', 'para cada alumno'] },
-  { value: '4', target: '4', suffix: '', labelLines: ['materias', 'principales'] },
-];
-
-export const aboutStats = [
-  { value: '+7', tone: 'green', labelLines: ['años de', 'experiencia'] },
-  { value: '✓', labelLines: ['Docente', 'habilitado'] },
-  { value: '4', tone: 'green', labelLines: ['materias', 'principales'] },
-];
-
-export const aboutTabs = [
-  { id: 'formacion', icon: '🎓', label: 'Formación' },
-  { id: 'experiencia', icon: '🛤️', label: 'Trayectoria' },
-  { id: 'valores', icon: '❤️', label: 'Valores' },
-  { id: 'habilidades', icon: '⚡', label: 'Habilidades' },
-];
-
-export const formationItems = [
-  {
-    icon: '🎓',
-    title: 'Licenciatura en Ciencias de la Educación',
-    description:
-      'Estudiante avanzado — próximo Profesor Universitario en Ciencias de la Educación. Una materia de graduarme.',
-  },
-  {
-    icon: '✅',
-    title: 'Docente Habilitado',
-    description: 'Tramo de formación pedagógica y didáctica oficial completado. Habilitación vigente.',
-  },
-  {
-    icon: '🧪',
-    title: 'Técnico Químico — Nivel Medio',
-    description: 'Base técnica real que aplico directamente en la enseñanza de Química y Física. No solo teoría.',
-  },
-  {
-    icon: '💻',
-    title: 'Programación, IA y Desarrollo Web',
-    description: 'Conocimientos aplicados a crear clases modernas, material didáctico digital y herramientas de aprendizaje.',
-  },
-];
-
-export const timelineItems = [
-  {
-    year: '2017 — inicio',
-    event: 'Primeras clases particulares',
-    detail: 'Empecé ayudando a compañeros del secundario. Fue ahí donde descubrí que enseñar era lo mío.',
-  },
-  {
-    year: '2019',
-    event: 'Técnico Químico',
-    detail: 'Me recibí de Técnico Químico nivel medio, sumando base técnica real a mi enseñanza de Química y Física.',
-  },
-  {
-    year: '2020 — 2021',
-    event: 'Clases virtuales durante la pandemia',
-    detail: 'Me adapté al formato virtual y lo convertí en una herramienta permanente. Llegué a alumnos de todo el país.',
-  },
-  {
-    year: '2022 — presente',
-    event: 'Licenciatura en Ciencias de la Educación',
-    detail: 'Estudiante avanzado. Todo lo que aprendo lo aplico directamente en mis clases.',
-  },
-  {
-    year: '2026',
-    event: 'Tu Profesor Particular — emprendimiento',
-    detail: 'Después de 7 años de boca en boca, llegó el momento de crecer y llegar a más personas.',
-  },
-];
-
-export const valueCards = [
-  {
-    icon: '🎯',
-    name: 'Claridad',
-    description: 'Si no quedó claro, no seguimos. Repito, adapto, busco el ángulo que funcione.',
-  },
-  {
-    icon: '❤️',
-    name: 'Empatía',
-    description: 'Entiendo de dónde viene cada alumno. Sin juicio, con paciencia real.',
-  },
-  {
-    icon: '⚡',
-    name: 'Eficacia',
-    description: 'Sin clases innecesarias. Vamos al grano, con el mejor camino posible.',
-  },
-  {
-    icon: '🤝',
-    name: 'Compromiso',
-    description: 'No desaparezco entre clases. El acompañamiento es genuino y continuo.',
-  },
-  {
-    icon: '🧠',
-    name: 'Aprendizaje real',
-    description: 'No busco que aprueben: busco que entiendan de verdad y para siempre.',
-  },
-  {
-    icon: '🏆',
-    name: 'Excelencia',
-    description: 'Cada clase es una oportunidad de dar lo mejor. Sin mediocridad.',
-  },
-];
-
-export const skillItems = [
-  ['Matemática', '95%'],
-  ['Química', '95%'],
-  ['Física', '88%'],
-  ['Inglés', '82%'],
-  ['Pedagogía y Didáctica', '97%'],
-  ['Tecnología educativa e IA', '85%'],
-];
-
-export const trustItems = [
-  {
-    icon: '🎓',
-    mainPrefix: 'Docente ',
-    greenText: 'Habilitado',
-    mainSuffix: '',
-    subLines: ['Tramo pedagógico y', 'didáctico oficial'],
-  },
-  {
-    icon: '🧪',
-    mainPrefix: 'Técnico ',
-    greenText: 'Químico',
-    mainSuffix: '',
-    subLines: ['Nivel medio — base', 'técnica real'],
-  },
-  {
-    icon: '📖',
-    mainPrefix: 'Lic. Cs. de la ',
-    greenText: 'Educación',
-    mainSuffix: '',
-    subLines: ['Estudiante avanzado —', 'próx. Prof. Universitario'],
-  },
-  {
-    icon: '💻',
-    mainPrefix: '',
-    greenText: 'IA',
-    mainSuffix: ' y Programación',
-    subLines: ['Desarrollo web, software', 'y herramientas digitales'],
-  },
-  {
-    icon: '⏱️',
-    mainPrefix: '',
-    greenText: '+7',
-    mainSuffix: ' Años',
-    subLines: ['De experiencia en', 'clases particulares'],
-  },
-  {
-    icon: '🎁',
-    mainPrefix: '',
-    greenText: '1ª Clase',
-    mainSuffix: ' Gratis',
-    subLines: ['45 minutos sin costo', 'para conocernos'],
-  },
-];
-
-export const faqs = [
-  {
-    question: '¿Cómo es la primera clase? ¿Tiene costo?',
-    answer:
-      'La primera clase dura 45 minutos y es completamente gratis. Nos conocemos, me contás tu situación, vemos de dónde partimos y armamos el camino juntos. Sin compromiso, sin presión. Es como una consulta inicial, pero sin costo.',
-  },
-  {
-    question: '¿Cuánto cuestan las clases?',
-    answer:
-      'Los precios varían según modalidad individual o grupal, frecuencia y si es presencial o virtual. Escribime por WhatsApp y te digo los valores actuales. Siempre busco que sea accesible.',
-  },
-  {
-    question: '¿Doy clases a adultos que retoman estudios?',
-    answer:
-      'Sí, y con mucho gusto. El CENS y adultos que retoman el secundario son parte importante de mi trabajo. La paciencia y la ausencia de juicio son fundamentales en esos casos.',
-  },
-  {
-    question: '¿Puedo consultar por WhatsApp entre clases?',
-    answer:
-      'Sí. Si te surge una duda puntual entre clase y clase, mandame un mensaje. El acompañamiento no termina cuando se acaba la hora. Eso no tiene costo adicional.',
-  },
-  {
-    question: '¿Trabajás con materias que no son exactas?',
-    answer:
-      'Preguntame qué materia es. Si la manejo bien, la doy directo. Si no, te lo digo con honestidad y me preparo para dártela como corresponde. No improviso.',
-  },
-];
-
-export const footerLinks = [
-  { label: 'Materias', href: '#materias' },
-  { label: 'Método', href: '#metodo' },
-  { label: 'Sobre mí', href: '#sobre' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contacto', href: `https://wa.me/${contact.whatsappNumber}`, external: true },
-];
-
-export function whatsappUrl(message = contact.firstClassMessage) {
-  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
-}
-
-export const subjectsIntro = {
-  label: '¿Qué enseño?',
-  titleLine1: 'Las materias de siempre —',
-  titleLine2: 'explicadas diferente.',
-  descriptionBefore: 'Si llegás frustrado con algo, lo primero que hago es entender ',
-  descriptionEmphasis: 'por qué',
-  descriptionAfter:
-    ' no te está entrando. No te explico de nuevo lo mismo. Busco el ángulo que funciona para vos.',
-};
-
-export const subjects = [
-  {
-    icon: '📐',
-    title: 'Matemática',
-    description: 'Álgebra, análisis, aritmética, geometría. Desde primaria hasta universitario.',
-  },
-  {
-    icon: '⚛️',
-    title: 'Física',
-    description: 'Mecánica, electromagnetismo, termodinámica. Teoría + práctica concreta.',
-  },
-  {
-    icon: '🧪',
-    title: 'Química',
-    description: 'Orgánica, inorgánica, estequiometría. Base técnica real como Técnico Químico.',
-  },
-  {
-    icon: '🇬🇧',
-    title: 'Inglés',
-    description: 'Gramática, lectura, escritura, oral. Para todos los niveles.',
-  },
-  {
-    icon: '📚',
-    title: '¿Otra materia?',
-    description:
-      'Preguntame igual. Si no la tengo dominada al 100%, te lo digo con honestidad y la aprendo para dártela bien.',
-    dark: true,
-  },
-];
-
-export const levels = {
-  label: '¿Para quién?',
-  titleLine1: 'No importa en qué nivel estés.',
-  titleLine2: 'Arrancamos desde ahí.',
-  description:
-    'Trabajé con chicos de 10 años y con adultos de 50 que retomaron el secundario. La edad no importa. Lo que importa es que tengas ganas.',
-  chips: ['Primario', 'Secundario', 'Sec. Técnico', 'CENS', 'Terciario', 'Universitario'],
-  visualTitle: 'Más allá de la materia',
-  visualSubtitle: 'Todo lo que puedo ayudarte a resolver',
-  supportItems: [
-    'Preparación de exámenes',
-    'Elaboración de apuntes propios',
-    'Trabajos prácticos',
-    'Consultas focalizadas',
-    'Apoyo escolar integral',
-    'Armado de CVs formato ATS',
-  ],
-};
-
-export const gallery = {
-  label: 'En persona',
-  titleLine1: 'Atrás de la pantalla',
-  titleLine2: 'hay una persona real.',
-  images: [
-    { className: 'mosaic-cell-1 mosaic-caption', src: images.hero, alt: 'Agustín Elías Sosa en retrato profesional para Tu Profesor Particular' },
-    { className: 'mosaic-cell-2', src: images.heroSecondary, alt: 'Agustín Elías Sosa en una imagen secundaria de presentación' },
-    { className: 'mosaic-cell-3', src: images.presencial, alt: 'Agustín Elías Sosa en contexto de clases presenciales' },
-    { className: 'mosaic-cell-4', src: images.group, alt: 'Agustín Elías Sosa representando clases grupales' },
-    { className: 'mosaic-cell-5', src: images.principal, alt: 'Foto principal de Agustín Elías Sosa para redes y presentación institucional' },
-  ],
-};
-
-export const situationSelector = {
-  label: 'Mensaje personalizado',
-  titleLine1: 'Contame tu situación',
-  titleLine2: 'y te hablo directo.',
-  description:
-    'Seleccioná tu nivel y la materia que necesitás. Te muestro cómo trabajaríamos juntos.',
-  levelQuestion: '¿En qué nivel estás?',
-  subjectQuestion: '¿Qué materia?',
-  levels: [
-    { label: 'Primario', value: 'primario' },
-    { label: 'Secundario', value: 'secundario' },
-    { label: 'Sec. Técnico', value: 'tecnico' },
-    { label: 'CENS / Adultos', value: 'cens' },
-    { label: 'Universitario', value: 'universitario' },
-  ],
-  subjects: [
-    { label: 'Matemática', value: 'matematica' },
-    { label: 'Física', value: 'fisica' },
-    { label: 'Química', value: 'quimica' },
-    { label: 'Inglés', value: 'ingles' },
-    { label: 'Otra materia', value: 'otras' },
-  ],
-};
-
-
-export const selectorMessages = {'primario-matematica':{msg:'Los números no tienen que dar miedo. Trabajo con chicos desde primero hasta séptimo, siempre al ritmo del alumno. Empezamos desde donde estés y construimos de a poco, con paciencia y mucha práctica.',wa:'Hola Agustín, tengo un alumno de primaria que necesita ayuda con Matemática.'},'primario-otras':{msg:'Para primaria tengo metodología adaptada a cada edad. Contame qué materia es y te digo cómo la trabajamos.',wa:'Hola Agustín, necesito clases particulares para nivel primario.'},'secundario-matematica':{msg:'Álgebra, geometría, análisis, funciones — lo que sea. El secundario es donde más trabajo y donde más resultados veo. Muchos llegaron creyendo que "no les daba la cabeza" y salieron aprobando con nota.',wa:'Hola Agustín, necesito clases de Matemática para el secundario.'},'secundario-fisica':{msg:'Física en el secundario suena terrible pero no lo es. Con ejemplos concretos y ejercitación paso a paso, se ordena. Soy Técnico Químico y la trabajé mucho, te garantizo claridad.',wa:'Hola Agustín, necesito clases de Física para el secundario.'},'secundario-quimica':{msg:'Química es mi punto fuerte — soy Técnico Químico de base. La trabajo de forma práctica y visual, sin que quede solo como fórmulas. Desde estequiometría hasta orgánica.',wa:'Hola Agustín, necesito clases de Química para el secundario.'},'secundario-ingles':{msg:'Inglés del secundario: gramática, lectura, escritura, oral. Lo trabajamos de forma progresiva y sin que se sienta como tarea.',wa:'Hola Agustín, necesito clases de Inglés para el secundario.'},'secundario-otras':{msg:'Preguntame qué materia es. Si la conozco bien, la doy directo. Si no, te lo digo con honestidad y me preparo para dártela como corresponde.',wa:'Hola Agustín, necesito clases particulares para el secundario.'},'tecnico-matematica':{msg:'El técnico tiene matemática más exigente — análisis, álgebra lineal, cálculo. Tuve muchos alumnos del técnico y sé exactamente qué puntos generan más conflicto.',wa:'Hola Agustín, necesito clases de Matemática para el secundario técnico.'},'tecnico-fisica':{msg:'Física en el técnico es otro nivel. Trabajo bien esa articulación entre teoría y aplicación práctica que tanto se necesita ahí.',wa:'Hola Agustín, necesito clases de Física para el secundario técnico.'},'tecnico-quimica':{msg:'Química técnica es mi casa. Soy Técnico Químico — no solo la enseño, la viví. Sé qué les cuesta más a los alumnos del técnico y cómo explicarlo bien.',wa:'Hola Agustín, necesito clases de Química para el secundario técnico.'},'tecnico-ingles':{msg:'Inglés técnico también lo trabajo. Si hay lectura de manuales o vocabulario específico, lo incorporamos.',wa:'Hola Agustín, necesito clases de Inglés para el técnico.'},'tecnico-otras':{msg:'Del técnico puedo trabajar muchas materias. Contame cuál necesitás y analizamos.',wa:'Hola Agustín, necesito ayuda con una materia del secundario técnico.'},'cens-matematica':{msg:'Adultos que retoman el secundario: los respeto y los admiro. Con el CENS trabajo con mucha paciencia, sin juzgar los años que pasaron. Arrancamos de cero si hace falta, tranquilo.',wa:'Hola Agustín, necesito clases de Matemática para el CENS.'},'cens-otras':{msg:'Para el CENS trabajo con mucha flexibilidad horaria y ritmo adaptado. Contame qué materia y cómo venís.',wa:'Hola Agustín, necesito ayuda con una materia del CENS.'},'universitario-matematica':{msg:'Álgebra lineal, análisis matemático, probabilidades, estadística — trabajé con alumnos de Ingeniería, Economía, Exactas. Sé dónde están los puntos críticos y cómo superarlos.',wa:'Hola Agustín, necesito clases de Matemática a nivel universitario.'},'universitario-fisica':{msg:'Física universitaria es exigente pero tiene lógica. Trabajo bien la transición del razonamiento secundario al universitario, que es donde más se pierde la gente.',wa:'Hola Agustín, necesito clases de Física a nivel universitario.'},'universitario-quimica':{msg:'Química universitaria — orgánica, inorgánica, analítica. La base técnica y los años de docencia me dan herramientas reales para explicarla bien.',wa:'Hola Agustín, necesito clases de Química a nivel universitario.'},'universitario-ingles':{msg:'Inglés universitario: lectura de papers, exámenes de idioma, parciales. Lo trabajamos con foco en lo que necesitás específicamente.',wa:'Hola Agustín, necesito clases de Inglés a nivel universitario.'},'universitario-otras':{msg:'Para universitario también trabajo otras materias según el caso. Contame de qué carrera sos y qué materia es.',wa:'Hola Agustín, necesito ayuda con una materia universitaria.'}};
-
-
-export const quickActions = [
-  { key: 'whatsapp', label: 'WhatsApp', href: whatsappUrl(), type: 'external' },
-  { key: 'contacto', label: 'Contacto', href: '#contacto', type: 'anchor' },
-  { key: 'top', label: 'Subir', href: '#hero', type: 'anchor' },
-];
-
-export const contactClosing = {
-  label: 'Hablemos',
-  title: 'La primera clase de 45 min es completamente gratis.',
-  subtitle: 'Conocernos, ver tu punto de partida y mostrarte con claridad cómo te puedo ayudar.',
-  support: 'Sin compromiso, sin presión, con una propuesta clara para que sientas si este acompañamiento es para vos.',
-};
-
-export const contactFormConfig = {
-  kicker: 'Consulta personalizada',
-  title: 'Dejame tu consulta y te respondo con una propuesta clara.',
-  description:
-    'Completá estos datos y te contesto con foco en tu situación real: nivel, materia, tipo de ayuda y próximos pasos.',
-  submitLabel: 'Quiero que me contacten',
-  levelOptions: [...levels.chips],
-  subjectOptions: subjects.map((subject) => subject.title.trim()),
-  inquiryOptions: [
-    'Preparación de examen',
-    'Apoyo escolar',
-    'Consulta puntual',
-    'Tutoría / acompañamiento',
-    'Clase grupal',
-  ],
-};
-
-export const contactFormMessages = {
-  name_required: 'Decime tu nombre para poder responderte bien.',
-  email_invalid: 'Ese email no parece válido.',
-  email_or_whatsapp_required: 'Necesito al menos un email o un WhatsApp para contactarte.',
-  level_required: 'Seleccioná tu nivel educativo.',
-  subject_required: 'Seleccioná la materia que necesitás.',
-  inquiry_type_required: 'Seleccioná el tipo de consulta.',
-  message_required: 'Contame brevemente qué necesitás.',
-  validation_error: 'Revisá los datos marcados y volvé a intentar.',
-  network_error: 'No pude conectar con el backend. Si querés, escribime directo por WhatsApp.',
-  missing_api_url: 'Falta configurar la conexión con el backend en este entorno.',
-  invalid_json_response: 'La respuesta del backend llegó malformada. Probemos de nuevo.',
-  contact_request_failed: 'No pude enviar la consulta en este momento. Intentá nuevamente.',
-  submit_error: 'Hubo un problema al enviar tu consulta. Probá de nuevo o escribime por WhatsApp.',
-};
+export const methodStats = [{ value: '+200', target: '200', suffix: '+', labelLines: ['estudiantes', 'acompa\u00f1ados'] }, { value: '8', target: '8', suffix: '', labelLines: ['a\u00f1os de', 'experiencia real'] }, { value: '9.71', labelLines: ['promedio actual', 'en Educaci\u00f3n'] }, { value: 'UAI', labelLines: ['ponente', '2024'] }];
+export const aboutStats = [{ value: '+200', tone: 'green', labelLines: ['estudiantes', 'acompa\u00f1ados'] }, { value: '9.71', labelLines: ['promedio actual', 'en UAI'] }, { value: 'UAI', tone: 'green', labelLines: ['congreso', '2024'] }];
+export const aboutTabs = [{ id: 'formacion', iconKey: 'graduation-cap', label: 'Formaci\u00f3n' }, { id: 'experiencia', iconKey: 'timeline', label: 'Trayectoria' }, { id: 'valores', iconKey: 'heart', label: 'Valores' }, { id: 'habilidades', iconKey: 'sparkles', label: 'Habilidades' }];
+export const formationItems = [{ iconKey: 'graduation-cap', title: 'Licenciatura en Ciencias de la Educaci\u00f3n · 4.° a\u00f1o', description: 'Estudiante avanzado en UAI, pr\u00f3ximo a obtener el t\u00edtulo intermedio de Profesor Universitario en Ciencias de la Educaci\u00f3n. Promedio actual: 9.71.' }, { iconKey: 'badge-check', title: 'Docente habilitado', description: 'Tramo de Formaci\u00f3n Pedag\u00f3gica del Nivel Medio para T\u00e9cnicos finalizado en UFASTA. Promedio: 9.94. Habilitaci\u00f3n oficial vigente.' }, { iconKey: 'flask-conical', title: 'T\u00e9cnico Qu\u00edmico', description: 'Base t\u00e9cnica real para ense\u00f1ar Qu\u00edmica y F\u00edsica con profundidad, rigor y ejemplos concretos.' }, { iconKey: 'laptop-minimal-check', title: 'Tecnolog\u00eda educativa, IA y desarrollo web', description: 'Uso pedag\u00f3gico de herramientas digitales, IA y programaci\u00f3n para crear materiales m\u00e1s claros, actuales e interactivos.' }];
+export const timelineItems = [{ year: '2017', event: 'Arranque como profesor particular', detail: 'Empec\u00e9 acompa\u00f1ando a estudiantes de forma personalizada y desde entonces sostengo clases presenciales y virtuales.' }, { year: '2018', event: 'Formaci\u00f3n t\u00e9cnica y pasant\u00eda profesional', detail: 'Me form\u00e9 como T\u00e9cnico Qu\u00edmico y trabaj\u00e9 en control y aseguramiento de calidad en laboratorio ambiental.' }, { year: '2020–2021', event: 'Consolidaci\u00f3n del formato virtual', detail: 'Transform\u00e9 la virtualidad en una herramienta estable para acompa\u00f1ar procesos de aprendizaje desde cualquier lugar.' }, { year: '2023–hoy', event: 'Licenciatura en Ciencias de la Educaci\u00f3n', detail: 'Todo lo que estudio en pedagog\u00eda, did\u00e1ctica y aprendizaje significativo lo aplico en mis clases reales.' }, { year: '2024', event: 'Ponente en Congreso UAI', detail: 'Present\u00e9 la ponencia \u201cLos afectos en la educaci\u00f3n: Gozar de aprender\u201d, reforzando una mirada donde aprender tambi\u00e9n involucra emoci\u00f3n y v\u00ednculo.' }];
+export const valueCards = [{ iconKey: 'target', name: 'Claridad', description: 'Si algo no se entiende, no avanzamos. Explico de otra forma hasta que se vuelva claro de verdad.' }, { iconKey: 'heart', name: 'Empat\u00eda', description: 'Entiendo que detr\u00e1s de cada materia hay una historia, una emoci\u00f3n y un contexto distinto.' }, { iconKey: 'zap', name: 'Eficacia', description: 'Busco el mejor camino posible para tu caso. Sin vueltas innecesarias y sin desgaste vac\u00edo.' }, { iconKey: 'handshake', name: 'Compromiso', description: 'Acompa\u00f1o entre clases, respondo dudas y sostengo el proceso, no solo la hora contratada.' }, { iconKey: 'brain', name: 'Aprendizaje real', description: 'Mi foco no es memorizar para zafar, sino entender de verdad y ganar autonom\u00eda.' }, { iconKey: 'award', name: 'Excelencia cercana', description: 'Profesionalismo y exigencia, s\u00ed; pero siempre con calidez humana y sin trato fr\u00edo.' }];
+export const skillItems = [['Pedagog\u00eda y did\u00e1ctica', '97%'], ['Matem\u00e1tica', '95%'], ['Qu\u00edmica', '95%'], ['F\u00edsica', '88%'], ['Tecnolog\u00eda educativa e IA', '85%'], ['Ingl\u00e9s', '82%']];
+export const trustItems = [{ iconKey: 'badge-check', mainPrefix: 'Docente ', greenText: 'habilitado', mainSuffix: '', subLines: ['Formaci\u00f3n pedag\u00f3gica oficial', 'y mirada did\u00e1ctica real'] }, { iconKey: 'flask-conical', mainPrefix: 'T\u00e9cnico ', greenText: 'Qu\u00edmico', mainSuffix: '', subLines: ['Base t\u00e9cnica concreta', 'para F\u00edsica y Qu\u00edmica'] }, { iconKey: 'graduation-cap', mainPrefix: 'Lic. en ', greenText: 'Educaci\u00f3n', mainSuffix: '', subLines: ['Estudiante avanzado', 'y futuro profesor universitario'] }, { iconKey: 'sparkles', mainPrefix: 'Tecnolog\u00eda ', greenText: 'educativa', mainSuffix: '', subLines: ['IA, recursos digitales', 'y clases m\u00e1s claras'] }, { iconKey: 'users-round', mainPrefix: '', greenText: '+200', mainSuffix: ' estudiantes', subLines: ['acompa\u00f1ados con', 'seguimiento personalizado'] }, { iconKey: 'gift', mainPrefix: '', greenText: '1ª clase', mainSuffix: ' gratis', subLines: ['45 minutos para conocernos', 'y ver tu caso real'] }];
+export const faqs = [{ question: '\u00bfC\u00f3mo es la primera clase? \u00bfTiene costo?', answer: 'La primera clase dura 45 minutos y es completamente gratis. Nos conocemos, veo tu situaci\u00f3n, entendemos de d\u00f3nde part\u00eds y te propongo un camino claro. Sin compromiso y sin presi\u00f3n.' }, { question: '\u00bfCu\u00e1nto cuestan las clases?', answer: 'El valor depende de la modalidad, frecuencia y si es individual o grupal. Escribime y te paso una propuesta clara seg\u00fan tu caso.' }, { question: '\u00bfTrabaj\u00e1s con adultos que retoman estudios?', answer: 'S\u00ed. De hecho es un tipo de acompa\u00f1amiento que valoro mucho. Trabajo con CENS y con adultos que retoman despu\u00e9s de a\u00f1os, siempre con paciencia, respeto y ritmo adaptado.' }, { question: '\u00bfPuedo consultar por WhatsApp entre clases?', answer: 'S\u00ed. Si surge una duda puntual entre clase y clase, me escrib\u00eds. Para m\u00ed el acompa\u00f1amiento real no termina cuando termina la hora.' }, { question: '\u00bfSolo das materias exactas?', answer: 'Mi n\u00facleo fuerte es Matem\u00e1tica, F\u00edsica, Qu\u00edmica e Ingl\u00e9s. Si necesit\u00e1s otra materia, preguntame igual. Si la puedo trabajar con solvencia, te lo digo; si no, tambi\u00e9n.' }];
+export const footerLinks = [{ label: 'Materias', href: '#materias' }, { label: 'M\u00e9todo', href: '#metodo' }, { label: 'Sobre m\u00ed', href: '#sobre' }, { label: 'FAQ', href: '#faq' }, { label: 'Contacto', href: `https://wa.me/${contact.whatsappNumber}`, external: true }];
+export function whatsappUrl(message = contact.firstClassMessage) { return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`; }
+export const subjectsIntro = { label: 'Qu\u00e9 ense\u00f1o', titleLine1: 'Las materias que m\u00e1s te frenan,', titleLine2: 'trabajadas con claridad de verdad.', descriptionBefore: 'No doy una clase gen\u00e9rica y listo. Primero detecto ', descriptionEmphasis: 'qu\u00e9 te est\u00e1 trabando a vos', descriptionAfter: ' y despu\u00e9s construyo una forma de entenderlo que puedas sostener.' };
+export const subjects = [{ iconKey: 'calculator', title: 'Matem\u00e1tica', description: 'Desde bases flojas hasta temas avanzados: explicaci\u00f3n clara, pr\u00e1ctica guiada y un camino paso a paso para recuperar seguridad.' }, { iconKey: 'atom', title: 'F\u00edsica', description: 'Conceptos complejos llevados a ejemplos concretos, con teor\u00eda ordenada y ejercicios pensados para que entiendas antes de memorizar.' }, { iconKey: 'flask-conical', title: 'Qu\u00edmica', description: 'Una de mis \u00e1reas m\u00e1s fuertes: rigor t\u00e9cnico, claridad did\u00e1ctica y aplicaci\u00f3n real para que deje de sentirse imposible.' }, { iconKey: 'languages', title: 'Ingl\u00e9s', description: 'Gram\u00e1tica, comprensi\u00f3n, escritura y oralidad trabajadas seg\u00fan tu nivel, tu objetivo y el tipo de examen o uso que necesit\u00e1s.' }, { iconKey: 'ellipsis', title: '\u00bfOtra materia?', description: 'Preguntame igual. Si la puedo acompa\u00f1ar con solvencia, avanzamos. Si no, te lo digo con honestidad. No improviso con tu aprendizaje.', dark: true }];
+export const levels = { label: 'Para qui\u00e9n', titleLine1: 'No importa en qu\u00e9 punto est\u00e9s.', titleLine2: 'Trabajo desde ah\u00ed.', description: 'Acompa\u00f1o desde primaria hasta universidad, incluyendo t\u00e9cnico, CENS y adultos que retoman. No parto de una exigencia ideal: parto de tu situaci\u00f3n real.', chips: ['Primario', 'Secundario', 'Secundario t\u00e9cnico', 'CENS / adultos', 'Terciario', 'Universitario'], visualTitle: 'M\u00e1s que una clase', visualSubtitle: 'Tambi\u00e9n puedo ayudarte a ordenar tu proceso de estudio y recuperar foco', supportItems: ['Preparaci\u00f3n de ex\u00e1menes y recuperatorios', 'Apuntes y res\u00famenes claros', 'Trabajos pr\u00e1cticos y consultas puntuales', 'Acompa\u00f1amiento semanal', 'T\u00e9cnicas de estudio y organizaci\u00f3n', 'Armado de CVs formato ATS'] };
+export const gallery = { label: 'Marca personal', titleLine1: 'Detr\u00e1s de la p\u00e1gina', titleLine2: 'hay una persona real.', images: [{ className: 'mosaic-cell-1 mosaic-caption', src: images.hero, alt: 'Agust\u00edn El\u00edas Sosa en retrato profesional para Tu Profesor Particular' }, { className: 'mosaic-cell-2', src: images.heroSecondary, alt: 'Agust\u00edn El\u00edas Sosa en una imagen secundaria de presentaci\u00f3n' }, { className: 'mosaic-cell-3', src: images.presencial, alt: 'Agust\u00edn El\u00edas Sosa en contexto de clases presenciales' }, { className: 'mosaic-cell-4', src: images.group, alt: 'Agust\u00edn El\u00edas Sosa representando trabajo grupal y acompa\u00f1amiento' }, { className: 'mosaic-cell-5', src: images.principal, alt: 'Foto principal de Agust\u00edn El\u00edas Sosa para presentaci\u00f3n institucional' }] };
+export const situationSelector = { label: 'Mensaje personalizado', titleLine1: 'Contame qu\u00e9 te est\u00e1 pasando', titleLine2: 'y te respondo sin vueltas.', description: 'Eleg\u00ed tu nivel y la materia. En segundos te muestro qu\u00e9 enfoque tomar\u00eda para ordenar el problema y empezar con claridad.', levelQuestion: '\u00bfEn qu\u00e9 nivel est\u00e1s?', subjectQuestion: '\u00bfQu\u00e9 materia necesit\u00e1s?', levels: [{ label: 'Primario', value: 'primario' }, { label: 'Secundario', value: 'secundario' }, { label: 'Secundario t\u00e9cnico', value: 'tecnico' }, { label: 'CENS / Adultos', value: 'cens' }, { label: 'Universitario', value: 'universitario' }], subjects: [{ label: 'Matem\u00e1tica', value: 'matematica' }, { label: 'F\u00edsica', value: 'fisica' }, { label: 'Qu\u00edmica', value: 'quimica' }, { label: 'Ingl\u00e9s', value: 'ingles' }, { label: 'Otra materia', value: 'otras' }] };
+export const selectorMessages = { 'primario-matematica': { msg: 'Trabajo con chicos y familias desde un lugar claro y paciente. En primaria la clave es construir seguridad, h\u00e1bitos y comprensi\u00f3n paso a paso.', wa: 'Hola Agust\u00edn, necesito ayuda con Matem\u00e1tica para nivel primario.' }, 'primario-otras': { msg: 'Para primaria adapto mucho la metodolog\u00eda a la edad, la atenci\u00f3n y el momento del alumno. Contame la materia y lo vemos bien.', wa: 'Hola Agust\u00edn, necesito clases particulares para nivel primario.' }, 'secundario-matematica': { msg: 'Es una de las \u00e1reas en las que m\u00e1s trabajo. Ordenamos conceptos, practicamos y desarmamos esa idea de \u201cno me da la cabeza para esto\u201d.', wa: 'Hola Agust\u00edn, necesito clases de Matem\u00e1tica para el secundario.' }, 'secundario-fisica': { msg: 'F\u00edsica suele volverse m\u00e1s clara cuando se conecta con ejemplos concretos y una progresi\u00f3n bien pensada. Ese es el foco de mis clases.', wa: 'Hola Agust\u00edn, necesito clases de F\u00edsica para el secundario.' }, 'secundario-quimica': { msg: 'Qu\u00edmica es una de mis fortalezas por formaci\u00f3n y experiencia. No me quedo solo en f\u00f3rmulas: trabajo comprensi\u00f3n, l\u00f3gica y aplicaci\u00f3n.', wa: 'Hola Agust\u00edn, necesito clases de Qu\u00edmica para el secundario.' }, 'secundario-ingles': { msg: 'Ingl\u00e9s se puede trabajar con mucha m\u00e1s claridad y menos frustraci\u00f3n cuando se ordena el recorrido y se adapta al nivel real del alumno.', wa: 'Hola Agust\u00edn, necesito clases de Ingl\u00e9s para el secundario.' }, 'secundario-otras': { msg: 'Preguntame la materia puntual. Si puedo acompa\u00f1arte bien, avanzamos. Si no, te lo digo con honestidad.', wa: 'Hola Agust\u00edn, necesito clases particulares para el secundario.' }, 'tecnico-matematica': { msg: 'En t\u00e9cnico la exigencia suele ser mayor. Trabajo mucho la transici\u00f3n entre entender el concepto y poder resolver con seguridad.', wa: 'Hola Agust\u00edn, necesito clases de Matem\u00e1tica para el secundario t\u00e9cnico.' }, 'tecnico-fisica': { msg: 'La F\u00edsica t\u00e9cnica pide claridad conceptual y buena pr\u00e1ctica. Ah\u00ed es donde m\u00e1s acompa\u00f1o, sin correr y sin saturar.', wa: 'Hola Agust\u00edn, necesito clases de F\u00edsica para el secundario t\u00e9cnico.' }, 'tecnico-quimica': { msg: 'Qu\u00edmica t\u00e9cnica es una de mis \u00e1reas m\u00e1s s\u00f3lidas. La ense\u00f1o desde la experiencia y desde una base t\u00e9cnica real.', wa: 'Hola Agust\u00edn, necesito clases de Qu\u00edmica para el secundario t\u00e9cnico.' }, 'tecnico-ingles': { msg: 'Si necesit\u00e1s ingl\u00e9s t\u00e9cnico o lectura de consignas, tambi\u00e9n lo podemos trabajar con foco pr\u00e1ctico.', wa: 'Hola Agust\u00edn, necesito clases de Ingl\u00e9s para el secundario t\u00e9cnico.' }, 'tecnico-otras': { msg: 'Contame qu\u00e9 materia es y en qu\u00e9 a\u00f1o est\u00e1s. Si entra dentro de mi campo de trabajo, te digo c\u00f3mo lo encarar\u00eda.', wa: 'Hola Agust\u00edn, necesito ayuda con una materia del secundario t\u00e9cnico.' }, 'cens-matematica': { msg: 'Con adultos que retoman estudios trabajo desde el respeto y la paciencia. Si hay que volver a empezar desde cero, se hace sin ning\u00fan problema.', wa: 'Hola Agust\u00edn, necesito clases de Matem\u00e1tica para el CENS.' }, 'cens-otras': { msg: 'En CENS lo central es recuperar confianza y armar un camino posible. Contame tu situaci\u00f3n y lo pensamos bien.', wa: 'Hola Agust\u00edn, necesito ayuda con una materia del CENS.' }, 'universitario-matematica': { msg: 'Trabajo materias universitarias con foco en razonamiento, estructura y preparaci\u00f3n concreta para parciales y finales.', wa: 'Hola Agust\u00edn, necesito clases de Matem\u00e1tica a nivel universitario.' }, 'universitario-fisica': { msg: 'La F\u00edsica universitaria exige otro nivel de abstracci\u00f3n. Mi trabajo es ayudarte a hacer esa transici\u00f3n con claridad y m\u00e9todo.', wa: 'Hola Agust\u00edn, necesito clases de F\u00edsica a nivel universitario.' }, 'universitario-quimica': { msg: 'Qu\u00edmica universitaria se puede trabajar con profundidad sin volverla imposible. Orden, pr\u00e1ctica y buena base hacen una gran diferencia.', wa: 'Hola Agust\u00edn, necesito clases de Qu\u00edmica a nivel universitario.' }, 'universitario-ingles': { msg: 'Si necesit\u00e1s ingl\u00e9s para lecturas, ex\u00e1menes o seguimiento de carrera, podemos enfocarlo a ese objetivo puntual.', wa: 'Hola Agust\u00edn, necesito clases de Ingl\u00e9s a nivel universitario.' }, 'universitario-otras': { msg: 'Decime de qu\u00e9 carrera sos y qu\u00e9 materia necesit\u00e1s. Si est\u00e1 dentro de mi campo, te propongo un plan claro.', wa: 'Hola Agust\u00edn, necesito ayuda con una materia universitaria.' } };
+export const testimonialItems = [{ quote: 'Reprob\u00e9 Matem\u00e1tica dos veces antes de conocer a Agust\u00edn. Con \u00e9l no solo aprob\u00e9: por primera vez sent\u00ed que pod\u00eda entenderla de verdad.', name: 'Marcos R.', role: 'Universitario · Ingenier\u00eda', avatar: 'M' }, { quote: 'Mi hija estaba muy atrasada en Qu\u00edmica del t\u00e9cnico. Agust\u00edn fue firme, paciente y muy claro. Termin\u00f3 el a\u00f1o con otra seguridad.', name: 'Silvia P.', role: 'Mam\u00e1 de alumna · Secundario t\u00e9cnico', avatar: 'S' }, { quote: 'Volv\u00ed a estudiar de grande y me daba verg\u00fcenza preguntar. Con Agust\u00edn sent\u00ed respeto, claridad y un acompa\u00f1amiento muy humano.', name: 'Andrea G.', role: 'CENS · Adulta que retom\u00f3 estudios', avatar: 'A' }];
+export const quickActions = [{ key: 'whatsapp', label: 'WhatsApp', href: whatsappUrl(), type: 'external' }, { key: 'contacto', label: 'Contacto', href: '#contacto', type: 'anchor' }, { key: 'top', label: 'Subir', href: '#hero', type: 'anchor' }];
+export const contactClosing = { label: 'Empecemos bien', title: 'La primera clase de 45 min es gratis para entender qu\u00e9 necesit\u00e1s de verdad.', subtitle: 'No es una llamada de venta. Es un primer encuentro para ordenar tu situaci\u00f3n, ver si te puedo ayudar y explicarte c\u00f3mo trabajar\u00edamos juntos.', support: 'Sin humo, sin promesas vac\u00edas y sin presi\u00f3n. Solo una conversaci\u00f3n clara, humana y profesional para que salgas con m\u00e1s tranquilidad que la que trajiste.' };
+export const contactFormConfig = { kicker: 'Consulta personalizada', title: 'Contame tu situaci\u00f3n y te respondo con una propuesta clara y realista.', description: 'Complet\u00e1 estos datos y te escribo con foco en tu nivel, la materia, el tipo de ayuda que necesit\u00e1s y los pr\u00f3ximos pasos que te convienen.', submitLabel: 'Quiero que me contacten', levelOptions: [...levels.chips], subjectOptions: subjects.map((subject) => subject.title.trim()), inquiryOptions: ['Preparaci\u00f3n de examen', 'Apoyo escolar', 'Consulta puntual', 'Tutor\u00eda / acompa\u00f1amiento', 'Clase grupal'] };
+export const contactFormMessages = { name_required: 'Decime tu nombre para poder responderte bien.', email_invalid: 'Ese email no parece v\u00e1lido.', email_or_whatsapp_required: 'Necesito al menos un email o un WhatsApp para contactarte.', level_required: 'Seleccion\u00e1 tu nivel educativo.', subject_required: 'Seleccion\u00e1 la materia que necesit\u00e1s.', inquiry_type_required: 'Seleccion\u00e1 el tipo de consulta.', message_required: 'Contame brevemente qu\u00e9 necesit\u00e1s.', validation_error: 'Revis\u00e1 los datos marcados y volv\u00e9 a intentar.', network_error: 'No pude conectar con el backend. Si quer\u00e9s, escribime directo por WhatsApp.', missing_api_url: 'Falta configurar la conexi\u00f3n con el backend en este entorno.', invalid_json_response: 'La respuesta del backend lleg\u00f3 malformada. Probemos de nuevo.', contact_request_failed: 'No pude enviar la consulta en este momento. Intent\u00e1 nuevamente.', submit_error: 'Hubo un problema al enviar tu consulta. Prob\u00e1 de nuevo o escribime por WhatsApp.' };

@@ -4,10 +4,26 @@ import { gsap } from 'gsap';
 import { useReducedMotion } from '../../hooks/useReducedMotion.js';
 
 const variants = {
-  up: { from: { autoAlpha: 0, y: 28 }, to: { autoAlpha: 1, y: 0 } },
-  left: { from: { autoAlpha: 0, x: -32 }, to: { autoAlpha: 1, x: 0 } },
-  right: { from: { autoAlpha: 0, x: 32 }, to: { autoAlpha: 1, x: 0 } },
-  scale: { from: { autoAlpha: 0, scale: 0.96, y: 20 }, to: { autoAlpha: 1, scale: 1, y: 0 } },
+  up: {
+    from: { autoAlpha: 0, y: 34, filter: 'blur(10px)' },
+    to: { autoAlpha: 1, y: 0, filter: 'blur(0px)' },
+  },
+  left: {
+    from: { autoAlpha: 0, x: -40, y: 10, filter: 'blur(10px)' },
+    to: { autoAlpha: 1, x: 0, y: 0, filter: 'blur(0px)' },
+  },
+  right: {
+    from: { autoAlpha: 0, x: 40, y: 10, filter: 'blur(10px)' },
+    to: { autoAlpha: 1, x: 0, y: 0, filter: 'blur(0px)' },
+  },
+  scale: {
+    from: { autoAlpha: 0, scale: 0.94, y: 24, filter: 'blur(8px)' },
+    to: { autoAlpha: 1, scale: 1, y: 0, filter: 'blur(0px)' },
+  },
+  clip: {
+    from: { autoAlpha: 0, y: 30, clipPath: 'inset(18% 0% 0% 0% round 24px)', filter: 'blur(8px)' },
+    to: { autoAlpha: 1, y: 0, clipPath: 'inset(0% 0% 0% 0% round 0px)', filter: 'blur(0px)' },
+  },
 };
 
 export default function Reveal({
@@ -34,7 +50,7 @@ export default function Reveal({
     if (!element) return;
 
     if (prefersReducedMotion) {
-      gsap.set(element, { clearProps: 'all', autoAlpha: 1, x: 0, y: 0, scale: 1 });
+      gsap.set(element, { clearProps: 'all', autoAlpha: 1, x: 0, y: 0, scale: 1, filter: 'none', clipPath: 'none' });
       return;
     }
 
@@ -49,7 +65,7 @@ export default function Reveal({
       ...(variants[variant]?.to ?? variants.up.to),
       duration,
       delay,
-      ease: 'power3.out',
+      ease: 'expo.out',
       overwrite: 'auto',
     });
   }, [delay, duration, inView, prefersReducedMotion, variant]);

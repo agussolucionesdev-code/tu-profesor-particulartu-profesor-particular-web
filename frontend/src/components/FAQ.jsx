@@ -9,9 +9,9 @@ export default function FAQ() {
         <Reveal style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 16px' }}>
           <div className="section-label">Preguntas frecuentes</div>
           <h2 className="section-title">
-            Lo que la gente
+            Lo que más me preguntan
             <br />
-            suele preguntarme.
+            antes de empezar.
           </h2>
         </Reveal>
         <RevealGroup className="faq-list" stagger={0.08}>

@@ -13,21 +13,10 @@ export default function CTASection() {
           <h2>{contactClosing.title}</h2>
           <span className="cta-handwrite">{contactClosing.subtitle}</span>
           <p className="cta-support-copy">{contactClosing.support}</p>
-          <RevealGroup className="cta-buttons" variant="scale" stagger={0.08}>
-            <a className="btn btn-wa btn-cta-pulse" href={whatsappUrl()} style={{ fontSize: 17, padding: '15px 32px' }} target="_blank" rel="noreferrer">
-              <MessageCircle aria-hidden="true" size={18} /> WhatsApp: {contact.whatsappDisplay}
-            </a>
-            <a className="btn btn-white" href={`mailto:${contact.email}`}>
-              <Mail aria-hidden="true" size={18} /> Enviar email
-            </a>
-            <a className="btn btn-outline btn-ghost-cta" href={contact.instagram} target="_blank" rel="noreferrer">
-              <Sparkles aria-hidden="true" size={18} /> Ver Instagram
-            </a>
-          </RevealGroup>
+          <div className="cta-proof-strip"><div className="cta-proof-item"><strong>+200</strong><span>{'estudiantes acompañados con seguimiento real'}</span></div><div className="cta-proof-item"><strong>{'8 años'}</strong><span>{'de experiencia sosteniendo procesos'}</span></div><div className="cta-proof-item"><strong>Temperley</strong><span>{'y modalidad virtual para toda Argentina'}</span></div></div>
+          <RevealGroup className="cta-buttons" variant="scale" stagger={0.08}><a className="btn btn-wa btn-cta-pulse" href={whatsappUrl()} style={{ fontSize: 17, padding: '15px 32px' }} target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" size={18} /> {'WhatsApp: '}{contact.whatsappDisplay}</a><a className="btn btn-white" href={`mailto:${contact.email}`}><Mail aria-hidden="true" size={18} />{'Enviar email'}</a><a className="btn btn-outline btn-ghost-cta" href={contact.instagram} target="_blank" rel="noreferrer"><Sparkles aria-hidden="true" size={18} />{'Ver Instagram'}</a></RevealGroup>
         </Reveal>
-        <Reveal as="div" className="cta-form-wrap" variant="right">
-          <ContactForm />
-        </Reveal>
+        <Reveal as="div" className="cta-form-wrap" variant="right"><ContactForm /></Reveal>
       </div>
     </section>
   );
